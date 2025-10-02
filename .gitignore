@@ -1,0 +1,21 @@
+# Ignore these files
+*.odt
+*.txt
+netlify/
+.git/
+node_modules/
+.DS_Store
+Thumbs.db
+
+# Keep these files for deployment
+!index.html
+!about.html
+!blog.html
+!proposal.html
+!employment-gap-analysis.html
+!qualification-framework.html
+!logo.png
+!ana-photo.png
+!blog/
+!Dockerfile
+!.dockerignore

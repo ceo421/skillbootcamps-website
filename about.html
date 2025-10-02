@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - SkillMindLab | Revolutionary AI Education Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        :root {
+            --oxford-blue: #002147;
+            --oxford-blue-lighter: #003366;
+            --oxford-blue-darker: #001122;
+            --metallic-gold: #B8860B;
+            --dark-gold: #8B6914;
+            --champagne-gold: #F7E7CE;
+            --blond-gold: #FAF0E6;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--oxford-blue-darker) 0%, var(--oxford-blue) 100%);
+        }
+
+        .neural-tree {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .tree-path {
+            stroke: var(--metallic-gold);
+            stroke-width: 2;
+            fill: none;
+        }
+        
+        .tree-node {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content h1, .content h2, .content h3 {
+            color: var(--oxford-blue);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .content h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .content h2 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .content h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .content p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .content ul, .content ol {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .content strong {
+            color: var(--oxford-blue);
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--metallic-gold);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <svg class="neural-tree mr-3" viewBox="0 0 45 45">
+                            <path class="tree-path" d="M22.5 40 Q18 35, 20 30 T22.5 22.5 Q25 18, 22.5 13"/>
+                            <circle cx="22.5" cy="13" r="3" fill="#B8860B" class="tree-node"/>
+                            <circle cx="16" cy="18" r="2.5" fill="#D4AF37" class="tree-node"/>
+                            <circle cx="29" cy="18" r="2.5" fill="#D4AF37" class="tree-node"/>
+                            <circle cx="13" cy="25" r="2" fill="#002147" class="tree-node"/>
+                            <circle cx="32" cy="25" r="2" fill="#002147" class="tree-node"/>
+                            <circle cx="18" cy="32" r="2" fill="#1E3A8A" class="tree-node"/>
+                            <circle cx="27" cy="32" r="2" fill="#1E3A8A" class="tree-node"/>
+                            <path class="tree-path" d="M22.5 13 L16 18 M22.5 13 L29 18"/>
+                            <path class="tree-path" d="M16 18 L13 25 M29 18 L32 25"/>
+                            <path class="tree-path" d="M20 30 L18 32 M22.5 22.5 L27 32"/>
+                        </svg>
+                        <a href="index.html" class="text-2xl font-bold tracking-tight flex items-center">
+                            <span style="color: var(--metallic-gold);">Skill</span><span style="color: var(--oxford-blue);">Mind</span><span style="color: var(--oxford-blue-lighter);">Lab</span><sup class="text-xs ml-1" style="color: var(--oxford-blue);">®</sup>
+                        </a>
+                    </div>
+                    <div class="hidden md:block ml-10">
+                        <div class="flex items-baseline space-x-4">
+                            <a href="index.html" class="text-gray-500 px-3 py-2 rounded-md text-sm font-medium" style="color: var(--oxford-blue-darker);">Home</a>
+                            <a href="about.html" class="px-3 py-2 rounded-md text-sm font-medium" style="color: var(--oxford-blue);">About Us</a>
+                            <a href="blog.html" class="text-gray-500 px-3 py-2 rounded-md text-sm font-medium" style="color: var(--oxford-blue-darker);">Blog</a>
+                            <a href="proposal.html" class="text-gray-500 px-3 py-2 rounded-md text-sm font-medium" style="color: var(--oxford-blue-darker);">Funding Proposal</a>
+                            <a href="index.html#contact" class="text-gray-500 px-3 py-2 rounded-md text-sm font-medium" style="color: var(--oxford-blue-darker);">Contact</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-4 flex items-center md:ml-6">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium" style="background-color: var(--champagne-gold); color: var(--oxford-blue);">
+                            <i class="fas fa-circle mr-1" style="color: var(--metallic-gold);"></i>
+                            Skills Bootcamps Provider
+                        </span>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">About Us</h1>
+            <p class="text-xl text-white mb-8">Revolutionary AI Education Platform Born from Personal Experience</p>
+            <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <div class="bg-white bg-opacity-20 px-4 py-2 rounded-full">
+                    <span class="text-white font-semibold">Accessibility-First Design</span>
+                </div>
+                <div class="bg-white bg-opacity-20 px-4 py-2 rounded-full">
+                    <span class="text-white font-semibold">Neurodiversity-Inclusive</span>
+                </div>
+                <div class="bg-white bg-opacity-20 px-4 py-2 rounded-full">
+                    <span class="text-white font-semibold">Weston-super-Mare Based</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Mission -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Mission</h2>
+                <div class="max-w-4xl mx-auto">
+                    <p class="text-lg text-gray-700 mb-6">
+                        SWCyber Nexus CIC is proposing to be a Skills Bootcamp training provider, delivering transformative AI education 
+                        through our <strong>revolutionary, cutting-edge, and absolutely outstanding Learning Management System (LMS) platform</strong>. 
+                        We're committed to breaking down barriers and creating pathways to high-paying IT careers for everyone.
+                    </p>
+                    <p class="text-lg text-gray-700">
+                        Our vision is to democratize AI education, making advanced technical skills accessible to non-technical professionals, 
+                        career changers, and underserved communities across the South West and beyond.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Revolutionary Idea & Inclusive AI Powered Learning Platform -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Revolutionary Idea & Inclusive AI Powered Learning Platform</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Our cutting-edge Learning Management System represents a paradigm shift in educational technology, 
+                    designed from the ground up for accessibility, engagement, and real-world impact.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                 <!-- Adaptive Learning Design -->
+                 <div class="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-100 hover:border-blue-200 transition-all duration-300">
+                     <div class="text-center mb-4">
+                         <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: var(--champagne-gold);">
+                             <i class="fas fa-brain text-2xl" style="color: var(--oxford-blue);"></i>
+                         </div>
+                         <h3 class="text-xl font-bold text-gray-900 mb-2">Adaptive Learning Design</h3>
+                     </div>
+                     <ul class="space-y-2 text-sm text-gray-700">
+                         <li class="flex items-start">
+                             <i class="fas fa-check mr-2 mt-0.5" style="color: var(--metallic-gold);"></i>
+                             <span>Flexible learning paths based on individual needs</span>
+                         </li>
+                         <li class="flex items-start">
+                             <i class="fas fa-check mr-2 mt-0.5" style="color: var(--metallic-gold);"></i>
+                             <span>Progress-based content difficulty adjustment</span>
+                         </li>
+                         <li class="flex items-start">
+                             <i class="fas fa-check mr-2 mt-0.5" style="color: var(--metallic-gold);"></i>
+                             <span>Personalized feedback and milestone recognition</span>
+                         </li>
+                         <li class="flex items-start">
+                             <i class="fas fa-check mr-2 mt-0.5" style="color: var(--metallic-gold);"></i>
+                             <span>Learning outcome tracking and analysis</span>
+                         </li>
+                     </ul>
+                 </div>
+
+                <!-- Accessibility-First Design -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-100 hover:border-blue-200 transition-all duration-300">
+                    <div class="text-center mb-4">
+                        <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: var(--champagne-gold);">
+                            <i class="fas fa-universal-access text-2xl" style="color: var(--oxford-blue);"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Accessibility-First Design</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--metallic-gold);"></i>
+                            <span>Screen reader compatibility and keyboard navigation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--metallic-gold);"></i>
+                            <span>Neurodiversity-friendly interfaces and pacing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--metallic-gold);"></i>
+                            <span>Multiple content formats (audio, visual, text)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--metallic-gold);"></i>
+                            <span>Trauma-informed learning environments</span>
+                        </li>
+                    </ul>
+                </div>
+
+                 <!-- Collaborative Learning -->
+                 <div class="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-100 hover:border-blue-200 transition-all duration-300">
+                     <div class="text-center mb-4">
+                         <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: var(--champagne-gold);">
+                             <i class="fas fa-users text-2xl" style="color: var(--oxford-blue);"></i>
+                         </div>
+                         <h3 class="text-xl font-bold text-gray-900 mb-2">Collaborative Learning</h3>
+                     </div>
+                     <ul class="space-y-2 text-sm text-gray-700">
+                         <li class="flex items-start">
+                             <i class="fas fa-check mr-2 mt-0.5" style="color: var(--metallic-gold);"></i>
+                             <span>Discussion forums and peer-to-peer learning</span>
+                         </li>
+                         <li class="flex items-start">
+                             <i class="fas fa-check mr-2 mt-0.5" style="color: var(--metallic-gold);"></i>
+                             <span>Project collaboration and group work</span>
+                         </li>
+                         <li class="flex items-start">
+                             <i class="fas fa-check mr-2 mt-0.5" style="color: var(--metallic-gold);"></i>
+                             <span>Instructor-student communication systems</span>
+                         </li>
+                         <li class="flex items-start">
+                             <i class="fas fa-check mr-2 mt-0.5" style="color: var(--metallic-gold);"></i>
+                             <span>Community support and mentorship</span>
+                         </li>
+                     </ul>
+                 </div>
+
+                <!-- Gamified Learning -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-100 hover:border-blue-200 transition-all duration-300">
+                    <div class="text-center mb-4">
+                        <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: var(--champagne-gold);">
+                            <i class="fas fa-gamepad text-2xl" style="color: var(--oxford-blue);"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Gamified Learning</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--metallic-gold);"></i>
+                            <span>Achievement badges</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--metallic-gold);"></i>
+                            <span>Progress tracking</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--metallic-gold);"></i>
+                            <span>Interactive activities with AI tools</span>
+                        </li>
+
+                        <li class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--metallic-gold);"></i>
+                            <span>Unique learning experiences</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Advanced Analytics -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-100 hover:border-blue-200 transition-all duration-300">
+                    <div class="text-center mb-4">
+                        <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: var(--champagne-gold);">
+                            <i class="fas fa-chart-line text-2xl" style="color: var(--oxford-blue);"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Advanced Analytics</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--metallic-gold);"></i>
+                            <span>Learning progress visualization</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--metallic-gold);"></i>
+                            <span>Engagement metrics and retention analysis</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--metallic-gold);"></i>
+                            <span>Predictive modeling for success outcomes</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--metallic-gold);"></i>
+                            <span>Real-time instructor dashboards</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Industry Integration -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-100 hover:border-blue-200 transition-all duration-300">
+                    <div class="text-center mb-4">
+                        <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: var(--champagne-gold);">
+                            <i class="fas fa-industry text-2xl" style="color: var(--oxford-blue);"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Industry Integration</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--metallic-gold);"></i>
+                            <span>Real-world project portfolios</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--metallic-gold);"></i>
+                            <span>Industry-standard tools and platforms</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--metallic-gold);"></i>
+                            <span>Employer approved knowledge and skills</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--metallic-gold);"></i>
+                            <span>Career readiness assessments</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- The Innovative Leader of SWCyber Nexus CIC -->
+     <section class="py-16 bg-white">
+         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+             <div class="text-center mb-12">
+                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Innovative Leader of SWCyber Nexus CIC</h2>
+                 <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                     Meet the visionary behind SkillMindLab - someone who has turned personal challenges into innovative solutions 
+                     for educational accessibility and neurodiversity inclusion.
+                 </p>
+             </div>
+
+             <div class="grid md:grid-cols-2 gap-12 items-start">
+                 <div class="text-center">
+                     <!-- Profile Image with gold background -->
+                     <div class="relative inline-block mb-6">
+                         <img src="ana-photo.png" alt="Ana Jardim - Founder of SkillMindLab" class="profile-image mx-auto rounded-full w-48 h-48 object-cover" style="border: 4px solid var(--metallic-gold); background-color: var(--champagne-gold);">
+                     </div>
+                     
+                     <h3 class="text-2xl font-bold mb-2" style="color: var(--oxford-blue);">Ana Jardim</h3>
+                     <p class="text-lg text-gray-600 mb-4">Founder & CEO, SWCyber Nexus CIC</p>
+                     
+                     <div class="space-y-3 mb-6">
+                         <p class="flex items-center justify-center text-gray-700">
+                             <i class="fas fa-map-marker-alt mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                             Based in Weston-super-Mare, Somerset
+                         </p>
+                         <p class="flex items-center justify-center text-gray-700">
+                             <i class="fas fa-graduation-cap mr-2" style="color: #8A2BE2;"></i>
+                             Educator & Technology Innovator
+                         </p>
+                         <p class="flex items-center justify-center text-gray-700">
+                             <i class="fas fa-wheelchair mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                             Accessibility Advocate
+                         </p>
+                         <p class="flex items-center justify-center text-gray-700">
+                             <i class="fas fa-brain mr-2" style="color: #FF69B4;"></i>
+                             Neurodiversity Champion
+                         </p>
+                     </div>
+
+                     <div class="mt-6">
+                         <a href="https://www.linkedin.com/in/ana-j-19189624/" target="_blank" class="inline-flex items-center px-6 py-3 rounded-lg transition-colors duration-300 hover:opacity-90 font-semibold" style="background-color: var(--metallic-gold); color: var(--oxford-blue);">
+                             <i class="fab fa-linkedin mr-2"></i>
+                             View LinkedIn Profile
+                         </a>
+                     </div>
+                 </div>
+
+                 <div>
+                     <h3 class="text-2xl font-bold mb-6" style="color: var(--oxford-blue);">From Personal Challenges to Innovation</h3>
+                     
+                     <div class="space-y-6">
+                         <div>
+                             <h4 class="text-lg font-semibold mb-2" style="color: var(--oxford-blue);">Personal Experience Drives Innovation</h4>
+                             <p class="text-gray-700 mb-3">
+                                 Ana's journey with <strong style="color: var(--oxford-blue);">fibromyalgia, type 2 diabetes, and neurodiversity</strong> has given her unique insights 
+                                 into the challenges faced by learners with disabilities and health conditions. This lived experience 
+                                 directly informs every aspect of SkillMindLab's design philosophy.
+                             </p>
+                             <ul class="text-sm text-gray-600 space-y-1">
+                                 <li>• Deep understanding of accessibility barriers</li>
+                                 <li>• Personal experience with flexible learning needs</li>
+                                 <li>• First-hand knowledge of assistive technology requirements</li>
+                                 <li>• Empathy-driven approach to inclusive design</li>
+                             </ul>
+                         </div>
+
+                         <div>
+                             <h4 class="text-lg font-semibold mb-2" style="color: var(--oxford-blue);">South West Connections & Local Impact</h4>
+                             <p class="text-gray-700 mb-3">
+                                 As a resident of Weston-super-Mare, Ana understands the unique employment challenges facing the South West region. 
+                                 Her connections to local schools and educational institutions provide valuable insights into community needs.
+                             </p>
+                             <ul class="text-sm text-gray-600 space-y-1">
+                                 <li>• Local knowledge of employment gaps and skills shortages</li>
+                                 <li>• Connections with regional educational institutions</li>
+                                 <li>• Understanding of community-specific barriers to learning</li>
+                                 <li>• Commitment to local economic development</li>
+                             </ul>
+                         </div>
+
+                         <div>
+                             <h4 class="text-lg font-semibold mb-2" style="color: var(--oxford-blue);">Technical Expertise & Qualifications</h4>
+                             <p class="text-gray-700 mb-3">
+                                 Ana brings extensive experience in cybersecurity, AI education, and technology development to SkillMindLab. 
+                                 Her background combines technical expertise with educational innovation.
+                             </p>
+                             <ul class="text-sm text-gray-600 space-y-1">
+                                 <li>• Cybersecurity and AI education specialist</li>
+                                 <li>• Technology development and platform architecture</li>
+                                 <li>• Educational design and curriculum development</li>
+                                 <li>• Accessibility and inclusive design expertise</li>
+                             </ul>
+                         </div>
+
+                         <div>
+                             <h4 class="text-lg font-semibold mb-2" style="color: var(--oxford-blue);">EU Citizen Advantage</h4>
+                             <p class="text-gray-700 mb-3">
+                                 As an EU citizen, Ana brings diverse perspectives and international connections that enhance SkillMindLab's 
+                                 global reach while maintaining strong local roots in the South West.
+                             </p>
+                             <ul class="text-sm text-gray-600 space-y-1">
+                                 <li>• International perspective on educational technology</li>
+                                 <!-- Removed: Building and partnership opportunities (as it was crossed out in the image) -->
+                                 <li>• Cross-cultural understanding of learning needs</li>
+                                 <li>• Global best practices in accessibility design</li>
+                             </ul>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
+
+    <!-- Why This Matters -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why This Personal Story Matters</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Ana's unique background creates the perfect foundation for a revolutionary educational platform 
+                    that truly serves underserved communities.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: var(--metallic-gold);">
+                        <i class="fas fa-heart text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Authentic Understanding</h3>
+                    <p class="text-gray-600">
+                        First-hand experience with the challenges our learners face creates genuine empathy and 
+                        authentic solutions that actually work.
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: var(--metallic-gold);">
+                        <i class="fas fa-lightbulb text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Innovation Through Adversity</h3>
+                    <p class="text-gray-600">
+                        Personal challenges have driven creative problem-solving and innovative approaches to 
+                        educational accessibility that others haven't considered.
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: var(--metallic-gold);">
+                        <i class="fas fa-users text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Community Commitment</h3>
+                    <p class="text-gray-600">
+                        Local roots and personal investment in the South West community ensure long-term commitment 
+                        to regional economic development and social impact.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+                <p class="text-lg text-gray-600">Ready to be part of the educational revolution?</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto">
+                <form id="contactForm" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject *</label>
+                        <select id="subject" name="subject" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="">Select a subject</option>
+                            <option value="Skills Bootcamps Information">Skills Bootcamps Information</option>
+                            <option value="LMS Platform Demo">LMS Platform Demo</option>
+                            <option value="Partnership Opportunities">Partnership Opportunities</option>
+                            <option value="Accessibility Features">Accessibility Features</option>
+                            <option value="General Inquiry">General Inquiry</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
+                        <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Tell us about your educational goals and how we can help..."></textarea>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" id="submitBtn" class="inline-block font-bold py-3 px-8 rounded-lg transition-colors duration-300 hover:opacity-90 text-lg" style="background-color: var(--metallic-gold); color: var(--oxford-blue);">
+                            <i class="fas fa-paper-plane mr-2"></i>Send Message
+                        </button>
+                    </div>
+                    
+                    <p class="text-sm text-gray-600 text-center">
+                        By submitting this form, you agree to our privacy policy. We'll use your information to respond to your enquiry.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="hero-gradient py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <svg class="neural-tree mr-3" viewBox="0 0 45 45">
+                            <path class="tree-path" d="M22.5 40 Q18 35, 20 30 T22.5 22.5 Q25 18, 22.5 13"/>
+                            <circle cx="22.5" cy="13" r="3" fill="#B8860B" class="tree-node"/>
+                            <circle cx="16" cy="18" r="2.5" fill="#D4AF37" class="tree-node"/>
+                            <circle cx="29" cy="18" r="2.5" fill="#D4AF37" class="tree-node"/>
+                            <circle cx="13" cy="25" r="2" fill="#002147" class="tree-node"/>
+                            <circle cx="32" cy="25" r="2" fill="#002147" class="tree-node"/>
+                            <circle cx="18" cy="32" r="2" fill="#1E3A8A" class="tree-node"/>
+                            <circle cx="27" cy="32" r="2" fill="#1E3A8A" class="tree-node"/>
+                            <path class="tree-path" d="M22.5 13 L16 18 M22.5 13 L29 18"/>
+                            <path class="tree-path" d="M16 18 L13 25 M29 18 L32 25"/>
+                            <path class="tree-path" d="M20 30 L18 32 M22.5 22.5 L27 32"/>
+                        </svg>
+                        <h3 class="text-xl font-bold text-white">SkillMindLab</h3>
+                    </div>
+                    <p class="text-blue-100 mb-4">
+                        Transforming careers through comprehensive AI education and inclusive learning environments.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-blue-100 hover:text-white">About Us</a></li>
+                        <li><a href="blog.html" class="text-blue-100 hover:text-white">Blog</a></li>
+                        <li><a href="proposal.html" class="text-blue-100 hover:text-white">Funding Proposal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact Info</h4>
+                    <div class="space-y-2 text-blue-100">
+                        <p><i class="fas fa-envelope mr-2"></i>hello@skillmindlab.com</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Weston-super-Mare, Somerset</p>
+                        <p><i class="fas fa-globe mr-2"></i>SWCyber Nexus CIC</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-blue-400 mt-8 pt-8 text-center">
+                <p class="text-blue-100">
+                    © 2025 SWCyber Nexus CIC. All rights reserved. | Skills Bootcamps Provider
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize EmailJS
+        (function() {
+            emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+        })();
+
+        // Contact form submission with EmailJS
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const originalText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+            submitBtn.disabled = true;
+            
+            // Get form data
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value,
+                fullName: document.getElementById('firstName').value + ' ' + document.getElementById('lastName').value
+            };
+            
+            // Send email using EmailJS
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert('Thank you for your message! We\'ll get back to you within 2 working days.');
+                    document.getElementById('contactForm').reset();
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    alert('Sorry, there was an error sending your message. Please try again or email us directly at hello@skillmindlab.com');
+                })
+                .finally(function() {
+                    // Reset button state
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                });
+        });
+    </script>
+</body>
+</html>

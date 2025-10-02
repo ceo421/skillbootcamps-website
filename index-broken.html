@@ -1,0 +1,1887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillMindLab - AI Training Provider | SWCyber Nexus CIC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --oxford-blue: #002147;
+            --oxford-blue-lighter: #667990;
+            --oxford-blue-darker: #00132A;
+            --metallic-gold: #D4AF37;
+            --dark-gold: #859410;
+            --champagne-gold: #FAEEC8;
+            --blond-gold: #FAF0BE;
+            --success-green: #10B981;
+            --warning-orange: #F59E0B;
+            --error-red: #EF4444;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1E293B;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--oxford-blue-darker) 0%, var(--oxford-blue) 100%);
+        }
+
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .feature-icon {
+            background: linear-gradient(135deg, var(--oxford-blue), var(--metallic-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Neural Tree Logo Styles */
+        .neural-tree {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .tree-path {
+            stroke: var(--metallic-gold);
+            stroke-width: 2;
+            fill: none;
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+            animation: drawPath 3s ease-in-out infinite;
+        }
+        
+        .tree-node {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes drawPath {
+            0%, 100% { stroke-dashoffset: 100; }
+            50% { stroke-dashoffset: 0; }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <svg class="neural-tree mr-3" viewBox="0 0 45 45">
+                            <path class="tree-path" d="M22.5 40 Q18 35, 20 30 T22.5 22.5 Q25 18, 22.5 13"/>
+                            <circle cx="22.5" cy="13" r="3" fill="#B8860B" class="tree-node"/>
+                            <circle cx="16" cy="18" r="2.5" fill="#D4AF37" class="tree-node"/>
+                            <circle cx="29" cy="18" r="2.5" fill="#D4AF37" class="tree-node"/>
+                            <circle cx="13" cy="25" r="2" fill="#002147" class="tree-node"/>
+                            <circle cx="32" cy="25" r="2" fill="#002147" class="tree-node"/>
+                            <circle cx="18" cy="32" r="2" fill="#1E3A8A" class="tree-node"/>
+                            <circle cx="27" cy="32" r="2" fill="#1E3A8A" class="tree-node"/>
+                            <path class="tree-path" d="M22.5 13 L16 18 M22.5 13 L29 18"/>
+                            <path class="tree-path" d="M16 18 L13 25 M29 18 L32 25"/>
+                            <path class="tree-path" d="M20 30 L18 32 M22.5 22.5 L27 32"/>
+                        </svg>
+                        <h1 class="text-2xl font-bold tracking-tight flex items-center">
+                            <span style="color: var(--metallic-gold);">Skill</span><span style="color: var(--oxford-blue);">Mind</span><span style="color: var(--oxford-blue-lighter);">Lab</span><sup class="text-xs ml-1" style="color: var(--oxford-blue);">®</sup>
+                        </h1>
+                    </div>
+                    <div class="hidden md:block ml-10">
+                        <div class="flex items-baseline space-x-4">
+                            <a href="#home" class="px-3 py-2 rounded-md text-sm font-medium" style="color: var(--oxford-blue);">Home</a>
+                            <a href="about.html" class="text-gray-500 px-3 py-2 rounded-md text-sm font-medium" style="color: var(--oxford-blue-darker);">About Us</a>
+                            <a href="blog.html" class="text-gray-500 px-3 py-2 rounded-md text-sm font-medium" style="color: var(--oxford-blue-darker);">Blog</a>
+                            <a href="proposal.html" class="text-gray-500 px-3 py-2 rounded-md text-sm font-medium" style="color: var(--oxford-blue-darker);">Funding Proposal</a>
+                            <a href="#contact" class="text-gray-500 px-3 py-2 rounded-md text-sm font-medium" style="color: var(--oxford-blue-darker);">Contact</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-4 flex items-center md:ml-6">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium" style="background-color: var(--champagne-gold); color: var(--oxford-blue);">
+                            <i class="fas fa-circle mr-1" style="color: var(--metallic-gold);"></i>
+                            Skills Bootcamps Provider
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                Launch Your High-Paying IT Career<br>
+                <span style="color: var(--metallic-gold);">NO CODING REQUIRED</span>
+            </h1>
+            <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+                Break into £30K-£60K IT roles without technical backgrounds. Our bootcamps turn non-technical professionals into AI specialists, automation experts, and digital transformation leaders.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <div class="flex items-center">
+                    <i class="fas fa-check-circle mr-2" style="color: var(--metallic-gold);"></i>
+                    <span class="text-white">UK Government Approved Provider</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-check-circle mr-2" style="color: var(--metallic-gold);"></i>
+                    <span class="text-white">Accessibility First</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About Our Mission</h2>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    <strong>SWCyber Nexus CIC</strong> is revolutionizing IT careers by transforming non-technical professionals into high-earning specialists. Our <strong>revolutionary, cutting-edge, and absolutely outstanding LMS platform</strong> delivers bootcamps that break down barriers to high-paying IT roles. We're solving the critical skills shortage by making AI, automation, and digital transformation accessible to everyone - regardless of technical background.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Who We Serve</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-arrow-right mr-3" style="color: var(--oxford-blue);"></i>
+                            <span>Career changers transitioning to AI/digital roles</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-arrow-right mr-3" style="color: var(--oxford-blue);"></i>
+                            <span>Women returning to work after career breaks</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-arrow-right mr-3" style="color: var(--oxford-blue);"></i>
+                            <span>Neurodiverse learners and those with learning difficulties</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-arrow-right mr-3" style="color: var(--oxford-blue);"></i>
+                            <span>Adults upskilling to stay relevant in the AI economy</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-right mr-3 mt-1" style="color: var(--oxford-blue);"></i>
+                            <div>
+                                <span><strong>Somerset residents</strong> (BA & TA postcodes)</span>
+                                <br><span class="text-sm text-gray-600 mt-1 block">Available to residents of: Bath, Bridgwater, Burnham-on-Sea, Chard, Frome, Glastonbury, Minehead, Taunton, Wells, Weston-super-Mare, Yeovil</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Our Approach</h3>
+                    <p class="text-gray-600 mb-4">
+                        We deliver 100% online training with a trauma-informed approach, ensuring 
+                        accessibility and inclusivity for all learners.
+                    </p>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <i class="fas fa-check mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                            <span>Flexible learning schedules</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                            <span>Industry-relevant curriculum</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                            <span>Career support and guidance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose Our Training</h2>
+                <p class="text-lg text-gray-600">Comprehensive AI education designed for real-world success</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
+                    <div class="text-4xl feature-icon mb-4">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">AI-Powered Learning</h3>
+                    <p class="text-gray-600">
+                        Our revolutionary LMS platform uses advanced AI to personalize learning 
+                        experiences and adapt to individual learning styles.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
+                    <div class="text-4xl feature-icon mb-4">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Community Support</h3>
+                    <p class="text-gray-600">
+                        Join a supportive community of learners, mentors, and industry professionals 
+                        committed to your success.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
+                    <div class="text-4xl feature-icon mb-4">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Recognized Qualifications</h3>
+                    <p class="text-gray-600">
+                        Earn industry-recognized certifications that enhance your career prospects 
+                        and validate your AI expertise.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accessibility & Neurodiversity Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Accessibility First Design</h2>
+                <p class="text-lg text-gray-600">Comprehensive support for neurodiverse learners and those with disabilities</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <!-- Universal Design -->
+                <div class="bg-gray-50 p-6 rounded-lg text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: var(--champagne-gold);">
+                        <i class="fas fa-universal-access text-2xl" style="color: var(--oxford-blue);"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Universal Design</h3>
+                    <p class="text-sm text-gray-600">Multiple learning formats: text, audio, video, interactive content</p>
+                </div>
+
+                <!-- Flexible Pacing -->
+                <div class="bg-gray-50 p-6 rounded-lg text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: var(--champagne-gold);">
+                        <i class="fas fa-clock text-2xl" style="color: var(--oxford-blue);"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Flexible Pacing</h3>
+                    <p class="text-sm text-gray-600">Self-paced modules with extended deadlines and break periods</p>
+                </div>
+
+                <!-- Assistive Technology -->
+                <div class="bg-gray-50 p-6 rounded-lg text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: var(--champagne-gold);">
+                        <i class="fas fa-microphone text-2xl" style="color: var(--oxford-blue);"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Assistive Technology</h3>
+                    <p class="text-sm text-gray-600">Screen readers, voice recognition, text-to-speech integration</p>
+                </div>
+
+                <!-- Personal Support -->
+                <div class="bg-gray-50 p-6 rounded-lg text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: var(--champagne-gold);">
+                        <i class="fas fa-hands-helping text-2xl" style="color: var(--oxford-blue);"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Personal Support</h3>
+                    <p class="text-sm text-gray-600">Dedicated mentors, regular check-ins, and peer support groups</p>
+                </div>
+            </div>
+
+            <!-- Detailed Accessibility Features -->
+            <div class="bg-gray-50 p-8 rounded-lg">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Comprehensive Accessibility Features</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-lg font-bold mb-4" style="color: var(--oxford-blue);">Learning Adaptations</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                <span class="text-gray-700">Visual learning aids with high contrast and clear fonts</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                <span class="text-gray-700">Audio descriptions and transcripts for all video content</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                <span class="text-gray-700">Interactive exercises and activities with multiple difficulty levels</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                <span class="text-gray-700">Step-by-step guided tutorials with progress tracking</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold mb-4" style="color: var(--oxford-blue);">Neurodiversity Support</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                <span class="text-gray-700">Sensory-friendly interface with customizable settings</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                <span class="text-gray-700">Executive function support tools and reminders</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                <span class="text-gray-700">Social communication support and peer mentoring</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                <span class="text-gray-700">Specialized assessment methods and flexible evaluation</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Bootcamps Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Transform Non-Technical Backgrounds into High-Paying IT Careers</h2>
+                <p class="text-lg text-gray-600 max-w-4xl mx-auto">Break the £30K-£70K salary barrier without coding experience. Our bootcamps turn non-technical professionals into AI specialists, automation experts, and digital transformation leaders that employers desperately need.</p>
+                <div class="mt-6 p-4 rounded-lg" style="background-color: var(--champagne-gold);">
+                    <h3 class="text-lg font-bold mb-2" style="color: var(--oxford-blue);">Proposed Structured Qualification Progression</h3>
+                    <p class="text-sm text-gray-700">Clear pathways from Level 2 to Level 5 with defined prerequisites and high-paying career outcomes</p>
+                </div>
+            </div>
+
+            <!-- Skills Bootcamps 2026 - Level 2 & 3 -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
+                <!-- Digital Literacy Skills with AI Bootcamp - Level 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-100 hover:border-blue-200 transition-all duration-300">
+                    <div class="text-center mb-4">
+                        <div class="w-12 h-12 mx-auto mb-3 rounded-full flex items-center justify-center" style="background-color: var(--champagne-gold);">
+                            <i class="fas fa-rocket text-xl" style="color: var(--oxford-blue);"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Digital Literacy Skills with AI</h3>
+                        <p class="text-sm text-gray-600">12 weeks • Inclusive Foundation</p>
+                        <div class="mt-2">
+                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium" style="background-color: var(--champagne-gold); color: var(--oxford-blue);">
+                                Level 2
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-2 mb-4 text-sm">
+                        <div class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--oxford-blue-lighter);"></i>
+                            <span class="text-gray-700">AI-Powered Digital Confidence</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--oxford-blue-lighter);"></i>
+                            <span class="text-gray-700">Neurodiverse-Friendly Tools</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--oxford-blue-lighter);"></i>
+                            <span class="text-gray-700">Workplace Tech Readiness</span>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button onclick="openBootcampModal('digital-literacy')" class="w-full font-bold py-2 px-4 rounded-lg transition-colors duration-300 hover:opacity-90 text-sm" style="background-color: var(--metallic-gold); color: var(--oxford-blue);">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- AI Productivity Specialist Bootcamp - Level 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-100 hover:border-blue-200 transition-all duration-300">
+                    <div class="text-center mb-4">
+                        <div class="w-12 h-12 mx-auto mb-3 rounded-full flex items-center justify-center" style="background-color: var(--champagne-gold);">
+                            <i class="fas fa-rocket text-xl" style="color: var(--oxford-blue);"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">AI Productivity Specialist</h3>
+                        <p class="text-sm text-gray-600">12 weeks • Hybrid Digital Roles</p>
+                        <div class="mt-2">
+                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium" style="background-color: var(--champagne-gold); color: var(--oxford-blue);">
+                                Level 2
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-2 mb-4 text-sm">
+                        <div class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--oxford-blue-lighter);"></i>
+                            <span class="text-gray-700">AI Workflow Automation</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--oxford-blue-lighter);"></i>
+                            <span class="text-gray-700">Executive Operations Portfolio</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--oxford-blue-lighter);"></i>
+                            <span class="text-gray-700">Microsoft & Google Certifications</span>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button onclick="openBootcampModal('ai-productivity')" class="w-full font-bold py-2 px-4 rounded-lg transition-colors duration-300 hover:opacity-90 text-sm" style="background-color: var(--metallic-gold); color: var(--oxford-blue);">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Vibe Coding, AI Agents & Automation Developer Bootcamp - Level 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-100 hover:border-blue-200 transition-all duration-300">
+                    <div class="text-center mb-4">
+                        <div class="w-12 h-12 mx-auto mb-3 rounded-full flex items-center justify-center" style="background-color: var(--champagne-gold);">
+                            <i class="fas fa-magic text-xl" style="color: var(--oxford-blue);"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Vibe Coding, AI Agents & Automation Developer</h3>
+                        <p class="text-sm text-gray-600">12 weeks • Technical Powerhouse</p>
+                        <div class="mt-2">
+                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium" style="background-color: var(--metallic-gold); color: var(--oxford-blue);">
+                                Level 3
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-2 mb-4 text-sm">
+                        <div class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--oxford-blue-lighter);"></i>
+                            <span class="text-gray-700">Python & JavaScript Coding</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--oxford-blue-lighter);"></i>
+                            <span class="text-gray-700">AI Agent Development</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--oxford-blue-lighter);"></i>
+                            <span class="text-gray-700">No-Code & Low-Code Solutions</span>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button onclick="openBootcampModal('vibe-coding')" class="w-full font-bold py-2 px-4 rounded-lg transition-colors duration-300 hover:opacity-90 text-sm" style="background-color: var(--metallic-gold); color: var(--oxford-blue);">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+
+                <!-- AI Ethics & Innovation Officer Bootcamp - Level 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-100 hover:border-blue-200 transition-all duration-300">
+                    <div class="text-center mb-4">
+                        <div class="w-12 h-12 mx-auto mb-3 rounded-full flex items-center justify-center" style="background-color: var(--champagne-gold);">
+                            <i class="fas fa-balance-scale text-xl" style="color: var(--oxford-blue);"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">AI Ethics & Innovation Officer</h3>
+                        <p class="text-sm text-gray-600">12 weeks • Tech Governance</p>
+                        <div class="mt-2">
+                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium" style="background-color: var(--metallic-gold); color: var(--oxford-blue);">
+                                Level 3
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-2 mb-4 text-sm">
+                        <div class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--oxford-blue-lighter);"></i>
+                            <span class="text-gray-700">Responsible AI Frameworks</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--oxford-blue-lighter);"></i>
+                            <span class="text-gray-700">AI Governance & Policy</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--oxford-blue-lighter);"></i>
+                            <span class="text-gray-700">Compliance & Risk Assessment</span>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button onclick="openBootcampModal('ai-ethics')" class="w-full font-bold py-2 px-4 rounded-lg transition-colors duration-300 hover:opacity-90 text-sm" style="background-color: var(--metallic-gold); color: var(--oxford-blue);">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Future Expansion 2027 - Apprenticeships (Level 4 & 5) -->
+            <div class="mt-12">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Future Expansion: Apprenticeships 2027</h3>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Building on our Skills Bootcamps success, we plan to launch Level 4 & 5 apprenticeships in 2027, 
+                        providing deeper technical training and leadership development through employer partnerships.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 opacity-75">
+                <!-- AI for Career Changers Apprenticeship - Level 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-100 hover:border-blue-200 transition-all duration-300">
+                    <div class="text-center mb-4">
+                        <div class="w-12 h-12 mx-auto mb-3 rounded-full flex items-center justify-center" style="background-color: var(--champagne-gold);">
+                            <i class="fas fa-brain text-xl" style="color: var(--oxford-blue);"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">AI for Career Changers</h3>
+                        <p class="text-sm text-gray-600">18 months • Apprenticeship</p>
+                        <div class="mt-2">
+                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium" style="background-color: var(--oxford-blue-lighter); color: white;">
+                                Level 4
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-2 mb-4 text-sm">
+                        <div class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--oxford-blue-lighter);"></i>
+                            <span class="text-gray-700">Python Programming</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--oxford-blue-lighter);"></i>
+                            <span class="text-gray-700">Machine Learning</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--oxford-blue-lighter);"></i>
+                            <span class="text-gray-700">Data Analysis</span>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button class="w-full font-bold py-2 px-4 rounded-lg text-sm bg-gray-300 text-gray-600 cursor-not-allowed">
+                            Coming 2027
+                        </button>
+                    </div>
+                </div>
+
+                <!-- AI Analytics & Business Intelligence Apprenticeship - Level 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-100 hover:border-blue-200 transition-all duration-300">
+                    <div class="text-center mb-4">
+                        <div class="w-12 h-12 mx-auto mb-3 rounded-full flex items-center justify-center" style="background-color: var(--champagne-gold);">
+                            <i class="fas fa-chart-bar text-xl" style="color: var(--oxford-blue);"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">AI Analytics & Business Intelligence</h3>
+                        <p class="text-sm text-gray-600">24 months • Apprenticeship</p>
+                        <div class="mt-2">
+                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium" style="background-color: var(--oxford-blue-lighter); color: white;">
+                                Level 4
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-2 mb-4 text-sm">
+                        <div class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--oxford-blue-lighter);"></i>
+                            <span class="text-gray-700">Data Analysis</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--oxford-blue-lighter);"></i>
+                            <span class="text-gray-700">Automated Reporting</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--oxford-blue-lighter);"></i>
+                            <span class="text-gray-700">Executive Communication</span>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button class="w-full font-bold py-2 px-4 rounded-lg text-sm bg-gray-300 text-gray-600 cursor-not-allowed">
+                            Coming 2027
+                        </button>
+                    </div>
+                </div>
+
+                <!-- AI Innovation & Strategic Leadership Apprenticeship - Level 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-100 hover:border-blue-200 transition-all duration-300">
+                    <div class="text-center mb-4">
+                        <div class="w-12 h-12 mx-auto mb-3 rounded-full flex items-center justify-center" style="background-color: var(--champagne-gold);">
+                            <i class="fas fa-shield-alt text-xl" style="color: var(--oxford-blue);"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">AI Innovation & Strategic Leadership</h3>
+                        <p class="text-sm text-gray-600">30 months • Apprenticeship</p>
+                        <div class="mt-2">
+                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium" style="background-color: var(--oxford-blue); color: white;">
+                                Level 5
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-2 mb-4 text-sm">
+                        <div class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--oxford-blue-lighter);"></i>
+                            <span class="text-gray-700">Career Strategy</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--oxford-blue-lighter);"></i>
+                            <span class="text-gray-700">Continuous Learning</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--oxford-blue-lighter);"></i>
+                            <span class="text-gray-700">Leadership Skills</span>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button class="w-full font-bold py-2 px-4 rounded-lg text-sm bg-gray-300 text-gray-600 cursor-not-allowed">
+                            Coming 2027
+                        </button>
+                    </div>
+                </div>
+
+                <!-- AI Business Strategy Consultant Apprenticeship - Level 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-100 hover:border-blue-200 transition-all duration-300">
+                    <div class="text-center mb-4">
+                        <div class="w-12 h-12 mx-auto mb-3 rounded-full flex items-center justify-center" style="background-color: var(--champagne-gold);">
+                            <i class="fas fa-briefcase text-xl" style="color: var(--oxford-blue);"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">AI Business Strategy Consultant</h3>
+                        <p class="text-sm text-gray-600">24 months • Apprenticeship</p>
+                        <div class="mt-2">
+                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium" style="background-color: var(--oxford-blue); color: white;">
+                                Level 5
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-2 mb-4 text-sm">
+                        <div class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--oxford-blue-lighter);"></i>
+                            <span class="text-gray-700">AI Business Model Development</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--oxford-blue-lighter);"></i>
+                            <span class="text-gray-700">Startup Strategy & Funding</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check mr-2 mt-0.5" style="color: var(--oxford-blue-lighter);"></i>
+                            <span class="text-gray-700">AI Consulting & Client Management</span>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button class="w-full font-bold py-2 px-4 rounded-lg text-sm bg-gray-300 text-gray-600 cursor-not-allowed">
+                            Coming 2027
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qualification Progression Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Clear Progression Pathways</h2>
+                <p class="text-lg text-gray-600">Structured learning journey from Skills Bootcamps (2026) to Apprenticeships (2027)</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Level 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-center mb-4">
+                        <div class="w-16 h-16 mx-auto mb-3 rounded-full flex items-center justify-center" style="background-color: var(--metallic-gold);">
+                            <span class="text-2xl font-bold" style="color: var(--oxford-blue);">2</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Foundation Level</h3>
+                        <p class="text-sm text-gray-600">Skills Bootcamp 2026</p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="border-l-4 pl-3" style="border-color: var(--metallic-gold);">
+                            <h4 class="font-bold text-sm">Digital Literacy Skills with AI</h4>
+                            <p class="text-xs text-gray-600">12 weeks • Inclusive foundation</p>
+                        </div>
+                        <div class="border-l-4 pl-3" style="border-color: var(--metallic-gold);">
+                            <h4 class="font-bold text-sm">AI Productivity Specialist</h4>
+                            <p class="text-xs text-gray-600">12 weeks • Hybrid digital roles</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="text-xs text-gray-500">Prerequisites: Basic digital literacy</p>
+                    </div>
+                </div>
+
+                <!-- Level 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-center mb-4">
+                        <div class="w-16 h-16 mx-auto mb-3 rounded-full flex items-center justify-center" style="background-color: var(--metallic-gold);">
+                            <span class="text-2xl font-bold" style="color: var(--oxford-blue);">3</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Intermediate Level</h3>
+                        <p class="text-sm text-gray-600">Skills Bootcamp 2026</p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="border-l-4 pl-3" style="border-color: var(--metallic-gold);">
+                            <h4 class="font-bold text-sm">Vibe Coding, AI Agents & Automation Developer</h4>
+                            <p class="text-xs text-gray-600">12 weeks • Technical powerhouse</p>
+                        </div>
+                        <div class="border-l-4 pl-3" style="border-color: var(--metallic-gold);">
+                            <h4 class="font-bold text-sm">AI Ethics & Innovation Officer</h4>
+                            <p class="text-xs text-gray-600">12 weeks • Tech governance</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="text-xs text-gray-500">Prerequisites: Level 2 or equivalent experience</p>
+                    </div>
+                </div>
+
+                <!-- Level 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-center mb-4">
+                        <div class="w-16 h-16 mx-auto mb-3 rounded-full flex items-center justify-center" style="background-color: var(--oxford-blue-lighter);">
+                            <span class="text-2xl font-bold text-white">4</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Advanced Level</h3>
+                        <p class="text-sm text-gray-600">Apprenticeship 2027</p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="border-l-4 pl-3" style="border-color: var(--oxford-blue-lighter);">
+                            <h4 class="font-bold text-sm">AI for Career Changers</h4>
+                            <p class="text-xs text-gray-600">18 months • Apprenticeship</p>
+                        </div>
+                        <div class="border-l-4 pl-3" style="border-color: var(--oxford-blue-lighter);">
+                            <h4 class="font-bold text-sm">AI Analytics & Business Intelligence</h4>
+                            <p class="text-xs text-gray-600">24 months • Apprenticeship</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="text-xs text-gray-500">Prerequisites: Level 3 qualification</p>
+                    </div>
+                </div>
+
+                <!-- Level 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-center mb-4">
+                        <div class="w-16 h-16 mx-auto mb-3 rounded-full flex items-center justify-center" style="background-color: var(--oxford-blue);">
+                            <span class="text-2xl font-bold text-white">5</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Professional Level</h3>
+                        <p class="text-sm text-gray-600">Apprenticeship 2027</p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="border-l-4 pl-3" style="border-color: var(--oxford-blue);">
+                            <h4 class="font-bold text-sm">AI Innovation & Strategic Leadership</h4>
+                            <p class="text-xs text-gray-600">30 months • Apprenticeship</p>
+                        </div>
+                        <div class="border-l-4 pl-3" style="border-color: var(--oxford-blue);">
+                            <h4 class="font-bold text-sm">AI Business Strategy Consultant</h4>
+                            <p class="text-xs text-gray-600">24 months • Apprenticeship</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="text-xs text-gray-500">Prerequisites: Level 4 qualification</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progression Benefits -->
+            <div class="mt-12 bg-white p-8 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center" style="color: var(--oxford-blue);">Progression Benefits</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: var(--champagne-gold);">
+                            <i class="fas fa-graduation-cap text-2xl" style="color: var(--oxford-blue);"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Clear Learning Journey</h4>
+                        <p class="text-sm text-gray-600">Structured progression from foundation to professional level</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: var(--champagne-gold);">
+                            <i class="fas fa-certificate text-2xl" style="color: var(--oxford-blue);"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Industry Recognition</h4>
+                        <p class="text-sm text-gray-600">Qualifications align with UK RQF framework</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: var(--champagne-gold);">
+                            <i class="fas fa-chart-line text-2xl" style="color: var(--oxford-blue);"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Career Advancement</h4>
+                        <p class="text-sm text-gray-600">Each level opens new professional opportunities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Career Guidance Resources</h2>
+                <p class="text-lg text-gray-600">Expert insights to accelerate your AI career journey</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <article class="bg-white p-6 rounded-lg card-hover">
+                    <div class="text-2xl mb-4" style="color: var(--oxford-blue);">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">AI Job Market Trends 2025</h3>
+                    <p class="text-gray-600 mb-4">
+                        Discover the latest trends in AI employment and identify the most in-demand skills.
+                    </p>
+                    <a href="blog/ai-job-market-trends.html" class="font-semibold hover:underline" style="color: var(--oxford-blue);">
+                        Read More <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </article>
+
+                <article class="bg-white p-6 rounded-lg card-hover">
+                    <div class="text-2xl mb-4" style="color: var(--oxford-blue);">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Resume Writing for AI Roles</h3>
+                    <p class="text-gray-600 mb-4">
+                        Master the art of crafting resumes that stand out in the competitive AI job market.
+                    </p>
+                    <a href="blog/resume-writing-ai-roles.html" class="font-semibold hover:underline" style="color: var(--oxford-blue);">
+                        Read More <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </article>
+
+                <article class="bg-white p-6 rounded-lg card-hover">
+                    <div class="text-2xl mb-4" style="color: var(--oxford-blue);">
+                        <i class="fas fa-map-signs"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Career Transition Guide</h3>
+                    <p class="text-gray-600 mb-4">
+                        Navigate your career change with confidence using our step-by-step transition roadmap.
+                    </p>
+                    <a href="blog/career-transition-guide.html" class="font-semibold hover:underline" style="color: var(--oxford-blue);">
+                        Read More <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+                <p class="text-lg text-gray-600">Ready to start your AI training journey? Contact us today.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope mr-2" style="color: var(--oxford-blue);"></i>
+                            <span class="text-gray-700">hello@skillmindlab.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2" style="color: var(--oxford-blue);"></i>
+                            <span class="text-gray-700">Weston-super-Mare, Somerset (Covering BA & TA postcodes)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <form action="mailto:hello@skillmindlab.com" method="post" enctype="text/plain" class="space-y-4" onsubmit="return submitForm()">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                            <select id="subject" name="subject" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="">Select a subject</option>
+                                <option value="Skills Bootcamps Inquiry">Skills Bootcamps Inquiry</option>
+                                <option value="AI for Everyone Bootcamp">AI for Everyone Bootcamp</option>
+                                <option value="AI Ethics & Innovation Bootcamp">AI Ethics & Innovation Bootcamp</option>
+                                <option value="AI-Powered Data Storytelling Bootcamp">AI-Powered Data Storytelling Bootcamp</option>
+                                <option value="Future-Proof Your Career Bootcamp">Future-Proof Your Career Bootcamp</option>
+                                <option value="AI for Career Changers Bootcamp">AI for Career Changers Bootcamp</option>
+                                <option value="Digital Skills for Returners Bootcamp">Digital Skills for Returners Bootcamp</option>
+                                <option value="General Information">General Information</option>
+                                <option value="Career Guidance">Career Guidance</option>
+                                <option value="Accessibility Support">Accessibility Support</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="4" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                        </div>
+                        <button type="submit" class="w-full font-bold py-3 px-6 rounded-lg transition-colors duration-300" style="background-color: var(--metallic-gold); color: var(--oxford-blue);">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="hero-gradient py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <svg class="neural-tree mr-3" viewBox="0 0 45 45">
+                            <path class="tree-path" d="M22.5 40 Q18 35, 20 30 T22.5 22.5 Q25 18, 22.5 13"/>
+                            <circle cx="22.5" cy="13" r="3" fill="#B8860B" class="tree-node"/>
+                            <circle cx="16" cy="18" r="2.5" fill="#D4AF37" class="tree-node"/>
+                            <circle cx="29" cy="18" r="2.5" fill="#D4AF37" class="tree-node"/>
+                            <circle cx="13" cy="25" r="2" fill="#002147" class="tree-node"/>
+                            <circle cx="32" cy="25" r="2" fill="#002147" class="tree-node"/>
+                            <circle cx="18" cy="32" r="2" fill="#1E3A8A" class="tree-node"/>
+                            <circle cx="27" cy="32" r="2" fill="#1E3A8A" class="tree-node"/>
+                            <path class="tree-path" d="M22.5 13 L16 18 M22.5 13 L29 18"/>
+                            <path class="tree-path" d="M16 18 L13 25 M29 18 L32 25"/>
+                            <path class="tree-path" d="M20 30 L18 32 M22.5 22.5 L27 32"/>
+                        </svg>
+                        <h3 class="text-xl font-bold text-white">SkillMindLab</h3>
+                    </div>
+                    <p class="text-blue-100 mb-4">
+                        Transforming careers through comprehensive AI education and inclusive learning environments.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-blue-100 hover:text-white">About Us</a></li>
+                        <li><a href="blog.html" class="text-blue-100 hover:text-white">Blog</a></li>
+                        <li><a href="proposal.html" class="text-blue-100 hover:text-white">Funding Proposal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact Info</h4>
+                    <div class="space-y-2 text-blue-100">
+                        <p><i class="fas fa-envelope mr-2"></i>hello@skillmindlab.com</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Weston-super-Mare, Somerset</p>
+                        <p><i class="fas fa-globe mr-2"></i>SWCyber Nexus CIC</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-blue-400 mt-8 pt-8 text-center">
+                <p class="text-blue-100">
+                    © 2025 SWCyber Nexus CIC. All rights reserved. | Skills Bootcamps Provider
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootcamp Detail Modals -->
+    <div id="bootcampModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <h2 id="modalTitle" class="text-3xl font-bold text-gray-900 mb-2"></h2>
+                            <p id="modalDuration" class="text-lg text-gray-600"></p>
+                        </div>
+                        <button onclick="closeBootcampModal()" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+                    </div>
+                    
+                    <div id="modalContent" class="space-y-6">
+                        <!-- Content will be populated by JavaScript -->
+                    </div>
+                    
+                    <div class="mt-8 text-center">
+                        <a href="#contact" onclick="closeBootcampModal()" class="inline-block font-bold py-3 px-8 rounded-lg transition-colors duration-300 hover:opacity-90" style="background-color: var(--metallic-gold); color: var(--oxford-blue); text-decoration: none;">
+                            Apply Now - FREE
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openBootcampModal(bootcampType) {
+            const modal = document.getElementById('bootcampModal');
+            const title = document.getElementById('modalTitle');
+            const duration = document.getElementById('modalDuration');
+            const content = document.getElementById('modalContent');
+            
+            if (bootcampType === 'ai-productivity') {
+                title.textContent = 'AI Productivity Specialist Bootcamp';
+                duration.textContent = '12-week intensive program • Level 2 Qualification • UK Government-funded';
+                
+                content.innerHTML = `
+                    <div class="mb-6 p-4 rounded-lg" style="background-color: var(--champagne-gold);">
+                        <h3 class="text-lg font-bold mb-2" style="color: var(--oxford-blue);">Target Audience:</h3>
+                        <ul class="text-sm text-gray-700">
+                            <li>• Women returning to work</li>
+                            <li>• Admin professionals seeking digital transformation</li>
+                            <li>• Career changers looking to transition into hybrid digital roles</li>
+                            <li>• <strong>Perfect starting point</strong> - no technical background required</li>
+                        </ul>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-bold mb-4" style="color: var(--oxford-blue);">Key Modules:</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>Foundations of AI & Automation:</strong> What AI is, how it works, business impact
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>Personal & Team Productivity:</strong> Time management, task automation, planning with AI
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>AI for Communication & Documentation:</strong> Emails, reports, meeting notes, chat summaries
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>Building AI Workflows:</strong> Zapier, Make.com, Notion AI
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold mb-4" style="color: var(--oxford-blue);">Target Audience:</h3>
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold mb-2">Non-Technical Professionals</h4>
+                                    <p class="text-sm text-gray-600">Perfect for career changers with no coding experience</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold mb-2">Administrative & Office Workers</h4>
+                                    <p class="text-sm text-gray-600">Transform daily tasks into automated processes</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold mb-2">Marketing & Sales Professionals</h4>
+                                    <p class="text-sm text-gray-600">Create content and campaigns 3x faster</p>
+                                </div>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold mb-4 mt-6" style="color: var(--oxford-blue);">Salary Potential:</h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <i class="fas fa-pound-sign mr-2" style="color: var(--metallic-gold);"></i>
+                                    <span>AI Productivity Specialist: £28K-£40K</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-pound-sign mr-2" style="color: var(--metallic-gold);"></i>
+                                    <span>Business Automation Consultant: £35K-£50K</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-pound-sign mr-2" style="color: var(--metallic-gold);"></i>
+                                    <span>AI-Enhanced Project Manager: £40K-£60K</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                `;
+            } else if (bootcampType === 'vibe-coding') {
+                title.textContent = 'Vibe Coding & AI Automation Bootcamp';
+                duration.textContent = '12-week intensive program • Level 3 Qualification • UK Government-funded';
+                
+                content.innerHTML = `
+                    <div class="mb-6 p-4 rounded-lg" style="background-color: var(--champagne-gold);">
+                        <h3 class="text-lg font-bold mb-2" style="color: var(--oxford-blue);">Prerequisites:</h3>
+                        <ul class="text-sm text-gray-700">
+                            <li>• <strong>Level 2 AI Productivity Specialist</strong> completion (or equivalent experience)</li>
+                            <li>• Basic understanding of AI tools and automation concepts</li>
+                            <li>• Comfortable with digital workflows and business processes</li>
+                            <li>• <strong>Next step</strong> in your IT career progression</li>
+                        </ul>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-bold mb-4" style="color: var(--oxford-blue);">No-Code Development Skills:</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>AI Agent Creation:</strong> Build intelligent assistants without coding
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>Advanced Prompt Engineering:</strong> Master the art of AI communication
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>Workflow Automation:</strong> Connect apps and systems seamlessly
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>No-Code App Development:</strong> Create functional applications visually
+                                    </div>
+                                </li>
+                            </ul>
+                            
+                            <h3 class="text-xl font-bold mb-4 mt-6" style="color: var(--oxford-blue);">Practical Examples:</h3>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-lightbulb mr-2 mt-1" style="color: var(--metallic-gold);"></i>
+                                    <span>Customer service chatbot that handles 80% of inquiries</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-lightbulb mr-2 mt-1" style="color: var(--metallic-gold);"></i>
+                                    <span>Automated lead qualification and follow-up system</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-lightbulb mr-2 mt-1" style="color: var(--metallic-gold);"></i>
+                                    <span>AI-powered content creation and social media management</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold mb-4" style="color: var(--oxford-blue);">Target Audience:</h3>
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold mb-2">Non-Technical Career Changers</h4>
+                                    <p class="text-sm text-gray-600">Break into high-paying IT roles without coding</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold mb-2">Business Process Owners</h4>
+                                    <p class="text-sm text-gray-600">Automate and optimize existing workflows</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold mb-2">Entrepreneurs & Small Business Owners</h4>
+                                    <p class="text-sm text-gray-600">Build systems that scale without technical teams</p>
+                                </div>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold mb-4 mt-6" style="color: var(--oxford-blue);">High-Paying Career Outcomes:</h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <i class="fas fa-pound-sign mr-2" style="color: var(--metallic-gold);"></i>
+                                    <span>No-Code Developer: £35K-£55K</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-pound-sign mr-2" style="color: var(--metallic-gold);"></i>
+                                    <span>AI Automation Specialist: £40K-£65K</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-pound-sign mr-2" style="color: var(--metallic-gold);"></i>
+                                    <span>Business Process Automation Consultant: £45K-£70K</span>
+                                </li>
+                            </ul>
+                            
+                            <div class="mt-6 p-4 rounded-lg" style="background-color: var(--champagne-gold);">
+                                <h4 class="font-bold mb-2" style="color: var(--oxford-blue);">Why This Works:</h4>
+                                <p class="text-sm text-gray-700">Employers desperately need people who can build AI solutions without expensive developer teams. You become the bridge between business needs and technical solutions.</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                content.innerHTML = `
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-bold mb-4" style="color: var(--oxford-blue);">In This Bootcamp You Will Learn:</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>Prompt Engineering:</strong> Master ChatGPT, Claude, and other AI tools for productivity
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>AI-Assisted Content Creation:</strong> Writing, design, analysis, and automation workflows
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>Ethical AI Usage:</strong> Understanding bias, privacy, and responsible AI implementation
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>AI Project Management:</strong> Workflow optimization and AI integration strategies
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold mb-4" style="color: var(--oxford-blue);">Target Audience:</h3>
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold mb-2">Career Changers</h4>
+                                    <p class="text-sm text-gray-600">No technical background required - learn practical AI tools</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold mb-2">Professionals Seeking AI Literacy</h4>
+                                    <p class="text-sm text-gray-600">Update your skillset with essential AI capabilities</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold mb-2">Returning Workers</h4>
+                                    <p class="text-sm text-gray-600">Gain confidence with modern AI tools and workflows</p>
+                                </div>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold mb-4 mt-6" style="color: var(--oxford-blue);">Accessibility Adaptations:</h3>
+                            <ul class="space-y-2 mb-4">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check mr-2 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span class="text-sm text-gray-700">Extended to 16 weeks with flexible pacing options</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check mr-2 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span class="text-sm text-gray-700">Visual prompt engineering tools with color-coded templates</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check mr-2 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span class="text-sm text-gray-700">Audio-guided AI tool tutorials with screen reader compatibility</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check mr-2 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span class="text-sm text-gray-700">Executive function support with task breakdown and reminders</span>
+                                </li>
+                            </ul>
+                            
+                            <h3 class="text-xl font-bold mb-4 mt-6" style="color: var(--oxford-blue);">Career Outcomes:</h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>AI Productivity Specialist</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>Content Strategy Manager</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>AI-Enhanced Project Coordinator</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>Digital Transformation Assistant</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                `;
+            } else if (bootcampType === 'ai-ethics') {
+                title.textContent = 'AI Ethics & Responsible Innovation';
+                duration.textContent = '14-week intensive program • Level 4 Qualification • UK Government-funded';
+                
+                content.innerHTML = `
+                    <div class="mb-6 p-4 rounded-lg" style="background-color: var(--champagne-gold);">
+                        <h3 class="text-lg font-bold mb-2" style="color: var(--oxford-blue);">Prerequisites:</h3>
+                        <ul class="text-sm text-gray-700">
+                            <li>• <strong>Level 3 Vibe Coding & AI Automation</strong> completion (or equivalent experience)</li>
+                            <li>• Understanding of AI tools and automation workflows</li>
+                            <li>• Experience with business process optimization</li>
+                            <li>• <strong>Advanced level</strong> - building on previous automation skills</li>
+                        </ul>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-bold mb-4" style="color: var(--oxford-blue);">In This Bootcamp You Will Learn:</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>Bias Detection & Mitigation:</strong> Identify and address AI bias in systems and data
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>Regulatory Compliance:</strong> GDPR, EU AI Act, and UK data protection requirements
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>Ethical AI Governance:</strong> Framework development and implementation strategies
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>Responsible AI Project Management:</strong> Ethics-first development and deployment
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold mb-4" style="color: var(--oxford-blue);">Target Audience:</h3>
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold mb-2">Mid-Career Professionals</h4>
+                                    <p class="text-sm text-gray-600">Managers and leaders implementing AI solutions</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold mb-2">Policy Makers</h4>
+                                    <p class="text-sm text-gray-600">Understanding AI regulation and compliance</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold mb-2">Ethics Officers</h4>
+                                    <p class="text-sm text-gray-600">Developing responsible AI governance frameworks</p>
+                                </div>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold mb-4 mt-6" style="color: var(--oxford-blue);">Accessibility Adaptations:</h3>
+                            <ul class="space-y-2 mb-4">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check mr-2 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span class="text-sm text-gray-700">Extended to 14 weeks with case study analysis support</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check mr-2 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span class="text-sm text-gray-700">Visual bias detection tools with interactive scenarios</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check mr-2 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span class="text-sm text-gray-700">Structured decision-making frameworks with templates</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check mr-2 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span class="text-sm text-gray-700">Social communication practice with peer review sessions</span>
+                                </li>
+                            </ul>
+                            
+                            <h3 class="text-xl font-bold mb-4 mt-6" style="color: var(--oxford-blue);">Career Outcomes:</h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>AI Ethics Officer</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>Compliance Manager</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>Responsible AI Consultant</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>AI Governance Specialist</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                `;
+            } else if (bootcampType === 'data-storytelling') {
+                title.textContent = 'AI-Powered Data Storytelling for Business Impact';
+                duration.textContent = '14-week part-time program • Level 4 Qualification • UK Government-funded';
+                
+                content.innerHTML = `
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-bold mb-4" style="color: var(--oxford-blue);">In This Bootcamp You Will Learn:</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>AI-Assisted Data Analysis:</strong> Automated insights, pattern recognition, and trend analysis
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>Automated Reporting:</strong> Dashboard creation, visualization, and presentation tools
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>Data-Driven Decision Making:</strong> Using AI insights for strategic business decisions
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>Executive Communication:</strong> Presenting AI insights to stakeholders and leadership
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold mb-4" style="color: var(--oxford-blue);">Target Audience:</h3>
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold mb-2">Marketing Professionals</h4>
+                                    <p class="text-sm text-gray-600">Create compelling data stories for campaigns and strategy</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold mb-2">Business Analysts</h4>
+                                    <p class="text-sm text-gray-600">Enhance reporting and insight communication</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold mb-2">Business Users</h4>
+                                    <p class="text-sm text-gray-600">Non-technical professionals creating powerful insights</p>
+                                </div>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold mb-4 mt-6" style="color: var(--oxford-blue);">Accessibility Adaptations:</h3>
+                            <ul class="space-y-2 mb-4">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check mr-2 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span class="text-sm text-gray-700">Extended to 18 weeks with hands-on practice sessions</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check mr-2 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span class="text-sm text-gray-700">Visual data interpretation tools with pattern recognition aids</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check mr-2 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span class="text-sm text-gray-700">Audio-described charts and graphs with alternative formats</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check mr-2 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span class="text-sm text-gray-700">Presentation coaching with confidence building exercises</span>
+                                </li>
+                            </ul>
+                            
+                            <h3 class="text-xl font-bold mb-4 mt-6" style="color: var(--oxford-blue);">Career Outcomes:</h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>Data Storytelling Specialist</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>Business Intelligence Analyst</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>Marketing Analytics Manager</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>Executive Reporting Specialist</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                `;
+            } else if (bootcampType === 'future-proof') {
+                title.textContent = 'Future-Proof Your Career: AI-Enhanced Professional Skills';
+                duration.textContent = '16-week part-time program • Level 5 Qualification • UK Government-funded';
+                
+                content.innerHTML = `
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-bold mb-4" style="color: var(--oxford-blue);">In This Bootcamp You Will Learn:</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>AI-Enhanced Communication:</strong> Collaboration tools, virtual meetings, and digital networking
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>Digital Transformation Project Management:</strong> Leading change in AI-driven environments
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>AI-Assisted Learning:</strong> Continuous skill development and adaptation strategies
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>Career Portfolio Building:</strong> Showcasing AI-enhanced skills and achievements
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold mb-4" style="color: var(--oxford-blue);">Target Audience:</h3>
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold mb-2">Career Changers</h4>
+                                    <p class="text-sm text-gray-600">Transition confidently into AI-enhanced roles</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold mb-2">Traditional Industry Professionals</h4>
+                                    <p class="text-sm text-gray-600">Adapt to digital transformation and AI integration</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold mb-2">Returning Workers</h4>
+                                    <p class="text-sm text-gray-600">Build confidence with modern workplace AI tools</p>
+                                </div>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold mb-4 mt-6" style="color: var(--oxford-blue);">Accessibility Adaptations:</h3>
+                            <ul class="space-y-2 mb-4">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check mr-2 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span class="text-sm text-gray-700">Extended to 20 weeks with comprehensive career transition support</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check mr-2 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span class="text-sm text-gray-700">Structured portfolio building with template libraries</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check mr-2 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span class="text-sm text-gray-700">Virtual networking practice with social skills coaching</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check mr-2 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span class="text-sm text-gray-700">Personalized learning paths with adaptive assessments</span>
+                                </li>
+                            </ul>
+                            
+                            <h3 class="text-xl font-bold mb-4 mt-6" style="color: var(--oxford-blue);">Career Outcomes:</h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>AI-Enhanced Project Manager</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>Digital Transformation Specialist</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>AI Integration Consultant</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>Future-Ready Professional</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                `;
+            } else if (bootcampType === 'vibe-coding') {
+                title.textContent = 'Vibe Coding & AI Automation Bootcamp';
+                duration.textContent = '12-week program • Level 3 Qualification • UK Government-funded';
+                
+                content.innerHTML = `
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-bold mb-4" style="color: var(--oxford-blue);">In This Bootcamp You Will Learn:</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>No-Code AI Development:</strong> Build functional apps and AI agents without programming
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>Advanced Prompt Engineering:</strong> Master techniques to get exactly what you need from AI
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>Business Process Automation:</strong> Create workflows that save companies thousands of hours
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>AI Agent Creation:</strong> Build customer service bots, data processors, and content generators
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>ROI-Focused Solutions:</strong> Create tools that deliver immediate business value
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold mb-4" style="color: var(--oxford-blue);">Target Audience:</h3>
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold mb-2">Non-Technical Professionals</h4>
+                                    <p class="text-sm text-gray-600">Perfect entry point into high-paying IT roles without coding</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold mb-2">Career Changers</h4>
+                                    <p class="text-sm text-gray-600">Transition to £35k-£50k IT roles in just 12 weeks</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold mb-2">Small Business Owners</h4>
+                                    <p class="text-sm text-gray-600">Automate processes and increase productivity immediately</p>
+                                </div>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold mb-4 mt-6" style="color: var(--oxford-blue);">Immediate ROI for Employers:</h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <i class="fas fa-pound-sign mr-2" style="color: var(--metallic-gold);"></i>
+                                    <span>Save £50k+ annually per employee through automation</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-pound-sign mr-2" style="color: var(--metallic-gold);"></i>
+                                    <span>Reduce need for expensive developers for routine tasks</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-pound-sign mr-2" style="color: var(--metallic-gold);"></i>
+                                    <span>Increase productivity by 300-500% in specific processes</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-pound-sign mr-2" style="color: var(--metallic-gold);"></i>
+                                    <span>Fast-track digital transformation without technical debt</span>
+                                </li>
+                            </ul>
+                            
+                            <h3 class="text-xl font-bold mb-4 mt-6" style="color: var(--oxford-blue);">Career Outcomes:</h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>AI Automation Specialist (£35k-£50k)</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>No-Code Developer (£40k-£60k)</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>Business Process Analyst (£30k-£45k)</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>AI Solutions Consultant (£45k-£70k)</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 p-6 rounded-lg" style="background-color: var(--champagne-gold);">
+                        <h3 class="text-lg font-bold mb-3" style="color: var(--oxford-blue);">Why This Solves the Skills Crisis:</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold mb-2">For Non-Technical People:</h4>
+                                <ul class="text-sm space-y-1">
+                                    <li>• No programming background required</li>
+                                    <li>• Natural language to create applications</li>
+                                    <li>• Immediate job opportunities in high-demand field</li>
+                                    <li>• 12 weeks to £35k+ salary potential</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2">For Employers:</h4>
+                                <ul class="text-sm space-y-1">
+                                    <li>• Access to larger talent pool</li>
+                                    <li>• Faster deployment of business solutions</li>
+                                    <li>• Lower development costs</li>
+                                    <li>• Employees who understand business needs</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (bootcampType === 'ai-career-changers') {
+                title.textContent = 'AI for Career Changers Bootcamp';
+                duration.textContent = '16-week intensive program • Level 3 Qualification • UK Government-funded';
+                
+                content.innerHTML = `
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-bold mb-4" style="color: var(--oxford-blue);">Learning Objectives:</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>AI Fundamentals:</strong> Master machine learning concepts and neural networks
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>Python Programming:</strong> Develop proficiency in data analysis and automation
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>Digital Business Transformation:</strong> Understand AI implementation strategies
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>Professional Portfolio:</strong> Build AI projects showcasing expertise
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>Industry Certifications:</strong> Prepare for recognized AI qualifications
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold mb-4" style="color: var(--oxford-blue);">Target Audience:</h3>
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold mb-2">Career Changers</h4>
+                                    <p class="text-sm text-gray-600">Transition from traditional roles into AI and digital transformation</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold mb-2">Professionals Seeking AI Expertise</h4>
+                                    <p class="text-sm text-gray-600">Update skills for AI-driven workplace demands</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold mb-2">Technical Learners</h4>
+                                    <p class="text-sm text-gray-600">Those ready for intensive technical training</p>
+                                </div>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold mb-4 mt-6" style="color: var(--oxford-blue);">Career Outcomes:</h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>AI Analyst</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>Data Scientist</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>Digital Transformation Consultant</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>Business Intelligence Analyst</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                `;
+            } else if (bootcampType === 'digital-returners') {
+                title.textContent = 'Digital Skills for Returners Bootcamp';
+                duration.textContent = '12-week supportive program • Level 2 Qualification • UK Government-funded';
+                
+                content.innerHTML = `
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-bold mb-4" style="color: var(--oxford-blue);">Learning Objectives:</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>Digital Literacy:</strong> Comprehensive cloud computing and online collaboration skills
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>Cybersecurity Fundamentals:</strong> Data protection and threat awareness
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>IT Support Techniques:</strong> Customer service and technical troubleshooting
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>Professional Development:</strong> Networking, interview skills, and career planning
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <div>
+                                        <strong>Industry Certifications:</strong> Microsoft, Google, CompTIA preparation
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold mb-4" style="color: var(--oxford-blue);">Target Audience:</h3>
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold mb-2">Women Returning to Work</h4>
+                                    <p class="text-sm text-gray-600">Build confidence and update skills after career breaks</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold mb-2">Career Changers</h4>
+                                    <p class="text-sm text-gray-600">Enter the growing digital skills and IT support field</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold mb-2">Supportive Learning Environment</h4>
+                                    <p class="text-sm text-gray-600">Structured, accessible learning with clear outcomes</p>
+                                </div>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold mb-4 mt-6" style="color: var(--oxford-blue);">Career Outcomes:</h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>Digital Skills Specialist</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>IT Support Advisor</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>Customer Service Representative</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right mr-2" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>Digital Transformation Coordinator</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeBootcampModal() {
+            const modal = document.getElementById('bootcampModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside
+        document.getElementById('bootcampModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeBootcampModal();
+            }
+        });
+    </script>
+</body>
+</html>

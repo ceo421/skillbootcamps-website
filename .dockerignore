@@ -1,0 +1,5 @@
+netlify/
+*.odt
+*.txt
+.git/
+

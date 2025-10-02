@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform Non-Technical Professionals into High-Paying IT Specialists - Skills Bootcamps 2026 & Apprenticeships 2027</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --oxford-blue: #002147;
+            --oxford-blue-lighter: #667990;
+            --oxford-blue-darker: #00132A;
+            --metallic-gold: #D4AF37;
+            --dark-gold: #859410;
+            --champagne-gold: #FAEEC8;
+            --blond-gold: #FAF0BE;
+            --success-green: #10B981;
+            --warning-orange: #F59E0B;
+            --error-red: #EF4444;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: #1E293B;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--oxford-blue-darker) 0%, var(--oxford-blue) 100%);
+        }
+
+        .content h2 {
+            color: var(--oxford-blue);
+            font-size: 1.875rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--champagne-gold);
+            padding-bottom: 0.5rem;
+        }
+
+        .content h3 {
+            color: var(--oxford-blue-darker);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .content h4 {
+            color: var(--oxford-blue);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+            text-transform: none;
+        }
+
+        .content ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .content strong {
+            color: var(--oxford-blue);
+        }
+
+        /* Neural Tree Logo Styles */
+        .neural-tree {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .tree-path {
+            stroke: var(--metallic-gold);
+            stroke-width: 2;
+            fill: none;
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+            animation: drawPath 3s ease-in-out infinite;
+        }
+        
+        .tree-node {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes drawPath {
+            0%, 100% { stroke-dashoffset: 100; }
+            50% { stroke-dashoffset: 0; }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <svg class="neural-tree mr-3" viewBox="0 0 45 45">
+                            <path class="tree-path" d="M22.5 40 Q18 35, 20 30 T22.5 22.5 Q25 18, 22.5 13"/>
+                            <circle cx="22.5" cy="13" r="3" fill="#B8860B" class="tree-node"/>
+                            <circle cx="16" cy="18" r="2.5" fill="#D4AF37" class="tree-node"/>
+                            <circle cx="29" cy="18" r="2.5" fill="#D4AF37" class="tree-node"/>
+                            <circle cx="13" cy="25" r="2" fill="#002147" class="tree-node"/>
+                            <circle cx="32" cy="25" r="2" fill="#002147" class="tree-node"/>
+                            <circle cx="18" cy="32" r="2" fill="#1E3A8A" class="tree-node"/>
+                            <circle cx="27" cy="32" r="2" fill="#1E3A8A" class="tree-node"/>
+                            <path class="tree-path" d="M22.5 13 L16 18 M22.5 13 L29 18"/>
+                            <path class="tree-path" d="M16 18 L13 25 M29 18 L32 25"/>
+                            <path class="tree-path" d="M20 30 L18 32 M22.5 22.5 L27 32"/>
+                        </svg>
+                        <a href="index.html" class="text-2xl font-bold tracking-tight flex items-center">
+                            <span style="color: var(--metallic-gold);">Skill</span><span style="color: var(--oxford-blue);">Mind</span><span style="color: var(--oxford-blue-lighter);">Lab</span><sup class="text-xs ml-1" style="color: var(--oxford-blue);">®</sup>
+                        </a>
+                    </div>
+                    <div class="hidden md:block ml-10">
+                        <div class="flex items-baseline space-x-4">
+                            <a href="index.html" class="text-gray-500 px-3 py-2 rounded-md text-sm font-medium" style="color: var(--oxford-blue-darker);">Home</a>
+                            <a href="about.html" class="text-gray-500 px-3 py-2 rounded-md text-sm font-medium" style="color: var(--oxford-blue-darker);">About Us</a>
+                            <a href="blog.html" class="text-gray-500 px-3 py-2 rounded-md text-sm font-medium" style="color: var(--oxford-blue-darker);">Blog</a>
+                            <a href="proposal.html" class="px-3 py-2 rounded-md text-sm font-medium" style="color: var(--oxford-blue);">Funding Proposal</a>
+                            <a href="index.html#contact" class="text-gray-500 px-3 py-2 rounded-md text-sm font-medium" style="color: var(--oxford-blue-darker);">Contact</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-4 flex items-center md:ml-6">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium" style="background-color: var(--champagne-gold); color: var(--oxford-blue);">
+                            <i class="fas fa-circle mr-1" style="color: var(--metallic-gold);"></i>
+                            Skills Bootcamps Provider
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                Transform Non-Technical Professionals into High-Paying IT Specialists
+            </h1>
+            <p class="text-xl text-blue-100 mb-4">
+                Skills Bootcamps 2026 & Apprenticeships 2027 - Break the £30K-£70K Salary Barrier Without Coding
+            </p>
+            <div class="flex items-center justify-center text-blue-200">
+                <i class="fas fa-calendar mr-2"></i>
+                <span>Proposed Start: Q1 2026</span>
+                <span class="mx-4">•</span>
+                <i class="fas fa-map-marker-alt mr-2"></i>
+                <span>Somerset County Council</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proposal Content -->
+    <article class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="content">
+                <div class="prose prose-lg max-w-none" style="max-width: 1200px;">
+                    <div class="bg-gray-50 p-8 rounded-lg mb-8">
+                        <h2 class="text-2xl font-bold mb-4" style="color: var(--oxford-blue);">Executive Summary</h2>
+                        <p class="text-lg leading-relaxed">
+                            <strong>SWCyber Nexus CIC</strong> is revolutionizing IT careers by transforming non-technical professionals into high-earning specialists through comprehensive Skills Bootcamps. Our bootcamps specifically target the critical skills shortage in AI, automation, and digital transformation - turning career changers, women returning to work, and neurodiverse learners into £30K-£70K earning IT professionals without requiring coding backgrounds. Our innovative Learning Management System (LMS) platform ensures 100% online delivery with accessibility-first design, making high-paying IT careers accessible to all Somerset residents.
+                        </p>
+                    </div>
+
+                    <h2>1. Organization Overview</h2>
+                    <p>
+                        <strong>SWCyber Nexus CIC</strong> is a community interest company dedicated to democratizing AI education and creating inclusive learning environments. We specialize in supporting underrepresented groups in technology, with particular focus on:
+                    </p>
+                    <ul>
+                        <li>Career changers transitioning to AI/digital roles</li>
+                        <li>Women returning to work after career breaks</li>
+                        <li>Neurodiverse learners and those with learning difficulties</li>
+                        <li>Adults upskilling to stay relevant in the AI economy</li>
+                    </ul>
+
+                    <h2>2. Proposed Structured Qualification Progression</h2>
+                    <p>Our Skills Bootcamps (2026) and Apprenticeships (2027) are designed as a progressive pathway from Level 2 to Level 5, enabling learners to build their IT careers step by step without requiring technical backgrounds:</p>
+
+                    <h3 style="margin-top: 3rem;">2.1 Level 2 Foundation Bootcamps</h3>
+                    
+                    <h4>Digital Literacy Skills With AI Bootcamp</h4>
+                    <p><strong>Duration:</strong> 12 weeks | <strong>Level:</strong> 2 | <strong>Target:</strong> Neurodiverse learners and adults entering digital environments for the first time</p>
+                    <ul>
+                        <li>Foundations of Digital Confidence: Intro to devices, OS, internet safety, navigating files</li>
+                        <li>Communication & Collaboration: Email, calendar, video meetings, collaborative docs</li>
+                        <li>AI-Powered Everyday Tools: ChatGPT, AI summaries, visual AI (Canva, DALL•E), voice assistants</li>
+                        <li>Workplace Tech Readiness: Cloud drives, task managers, calendars, forms & surveys</li>
+                        <li>Responsible AI Use: Understanding AI bias, data privacy, accessibility</li>
+                        <li>Accessible Tools for Neurodiverse Users: Screen readers, dictation tools, visual planners, task boards</li>
+                        <li><strong>No prerequisites required</strong> - perfect starting point for future bootcamps</li>
+                    </ul>
+
+                    <h4 style="margin-top: 2rem;">AI Productivity Specialist Bootcamp</h4>
+                    <p><strong>Duration:</strong> 12 weeks | <strong>Level:</strong> 2 | <strong>Target:</strong> Women returning to work, admin professionals, and career changers looking to transition into hybrid digital roles</p>
+                    <ul>
+                        <li>Foundations of AI & Automation: What AI is, how it works, business impact</li>
+                        <li>Personal & Team Productivity: Time management, task automation, planning with AI</li>
+                        <li>AI for Communication & Documentation: Emails, reports, meeting notes, chat summaries</li>
+                        <li>AI in Admin & Operations: Calendar AI, CRM tools, budgeting sheets with AI</li>
+                        <li>Data & Insight Tools: AI dashboards, Excel with Copilot, Google Looker Studio</li>
+                        <li>Building AI Workflows: Using tools like Zapier, Make.com, Notion AI</li>
+                        <li><strong>Career outcomes:</strong> AI Productivity Specialist (£28K-£40K), Business Automation Consultant (£35K-£50K)</li>
+                    </ul>
+
+                    <h3 style="margin-top: 3rem;">2.2 Level 3 Intermediate Bootcamps</h3>
+                    
+                    <h4>Vibe Coding, AI Agents & Automation Developer Bootcamp</h4>
+                    <p><strong>Duration:</strong> 12 weeks | <strong>Level:</strong> 3 | <strong>Prerequisite:</strong> Level 2 AI Productivity Specialist</p>
+                    <ul>
+                        <li>Coding Foundations: HTML, CSS, JavaScript basics, Python syntax, functions, and logic, GitHub and version control</li>
+                        <li>Coding with AI: Using ChatGPT to learn and debug, GitHub Copilot for coding, Prompt engineering basics</li>
+                        <li>APIs & AI Integrations: Working with OpenAI and Google APIs, Fetching data from APIs, Securing and testing APIs</li>
+                        <li>Web Apps & AI Interfaces: Build basic web apps (JS/Python/Streamlit), Streamlit for AI tools, Frontend UX principles</li>
+                        <li>Building AI Agents: Intro to LangChain & LLM orchestration, Memory & tools in AI agents, Chain of thought, ReAct, BabyAGI frameworks</li>
+                        <li>No-Code AI & Automation: Zapier, Make.com, Voiceflow, Building AI workflows & assistants, Connecting tools with webhooks</li>
+                        <li>Accessibility, Ethics & Inclusive Dev: Inclusive UX for neurodiverse users, WCAG accessibility standards, Testing for fairness and privacy</li>
+                        <li>Capstone & Portfolio: Building your AI agent project, Testing, feedback, refinement, Deploy and present</li>
+                        <li><strong>Career outcomes:</strong> Junior AI Automation Developer, AI Solutions Assistant, Prompt Engineer, No-Code Developer, Technical Operations Specialist, Citizen Developer</li>
+                    </ul>
+
+                    <h4 style="margin-top: 2rem;">AI Ethics & Innovation Officer Bootcamp</h4>
+                    <p><strong>Duration:</strong> 12 weeks | <strong>Level:</strong> 3 | <strong>Prerequisite:</strong> Level 2 AI Productivity Specialist</p>
+                    <ul>
+                        <li>Understanding AI in Society & Work: What AI is, types, capabilities, and real-world use cases, AI in society: impact on jobs, economy, and inclusion</li>
+                        <li>Frameworks for Ethical AI: Ethical principles (fairness, accountability, transparency, safety, privacy), Responsible AI frameworks: OECD, UNESCO, UK Government AI Guidance</li>
+                        <li>Law, Regulation & Compliance: Overview of AI regulation in the UK, EU AI Act, and global laws, GDPR and data privacy principles related to AI</li>
+                        <li>Tools for Governance & Auditing: AI audit tools: what they are and why they matter, Interpreting model outputs (e.g. bias detection), Tools overview: IBM AI Fairness 360, Google What-If, Fiddler</li>
+                        <li>Strategic Innovation with Responsible AI: What is innovation strategy in the age of AI?, Managing responsible AI pilots and cross-functional teams</li>
+                        <li>Leadership, Communication & Career Pathways: Presenting AI ethics and innovation proposals, Communicating risk and opportunity to stakeholders</li>
+                        <li><strong>Career outcomes:</strong> AI Governance Assistant, Responsible AI Coordinator, Digital Policy & Ethics Officer, AI Risk & Innovation Consultant</li>
+                    </ul>
+
+                    <h4 style="margin-top: 2rem;">AI For Career Changers Bootcamp</h4>
+                    <p><strong>Duration:</strong> 16 weeks | <strong>Level:</strong> 3 | <strong>Target:</strong> Technical career transition</p>
+                    <ul>
+                        <li>Python programming and machine learning fundamentals</li>
+                        <li>AI development tools and portfolio development</li>
+                        <li>Data analysis and technical project management</li>
+                        <li><strong>Career outcomes:</strong> AI Analyst, Data Scientist, Technical Consultant</li>
+                    </ul>
+
+                    <h3>2.3 Future Expansion: Level 4 & 5 Apprenticeships (2027)</h3>
+                    <p><em>Building on our Skills Bootcamps success, we plan to launch Level 4 & 5 apprenticeships in 2027, providing deeper technical training and leadership development through employer partnerships.</em></p>
+
+                    <h4>Level 4 Advanced Apprenticeships</h4>
+                    
+                    <h4 style="margin-top: 2rem;">AI For Career Changers Apprenticeship</h4>
+                    <p><strong>Duration:</strong> 18 months | <strong>Level:</strong> 4 | <strong>Prerequisite:</strong> Level 3 qualification</p>
+                    <ul>
+                        <li>Python programming and machine learning fundamentals</li>
+                        <li>AI development tools and portfolio development</li>
+                        <li>Data analysis and technical project management</li>
+                        <li><strong>Career outcomes:</strong> AI Analyst, Data Scientist, Technical Consultant</li>
+                    </ul>
+
+                    <h4>AI Analytics & Business Intelligence Apprenticeship</h4>
+                    <p><strong>Duration:</strong> 24 months | <strong>Level:</strong> 4 | <strong>Prerequisite:</strong> Level 3 qualification</p>
+                    <ul>
+                        <li>Data visualization and business intelligence</li>
+                        <li>Automated reporting and executive communication</li>
+                        <li>AI analytics and data-driven decision making</li>
+                        <li><strong>Career outcomes:</strong> AI Analytics Specialist, Business Intelligence Analyst, Executive Data Consultant</li>
+                    </ul>
+
+                    <h4 style="margin-top: 3rem;">Level 5 Professional Apprenticeships</h4>
+                    
+                    <h4>AI Innovation & Strategic Leadership Apprenticeship</h4>
+                    <p><strong>Duration:</strong> 30 months | <strong>Level:</strong> 5 | <strong>Prerequisite:</strong> Level 4 qualification</p>
+                    <ul>
+                        <li>AI collaboration and digital transformation leadership</li>
+                        <li>Strategic career planning and continuous learning</li>
+                        <li>Portfolio building and leadership skills development</li>
+                        <li><strong>Career outcomes:</strong> Digital Transformation Lead, AI Strategy Consultant, Senior Technology Manager</li>
+                    </ul>
+
+                    <h4 style="margin-top: 2rem;">AI Business Strategy Consultant Apprenticeship</h4>
+                    <p><strong>Duration:</strong> 24 months | <strong>Level:</strong> 5 | <strong>Prerequisite:</strong> Level 4 qualification</p>
+                    <ul>
+                        <li>AI business model development and startup strategy</li>
+                        <li>Client consulting and project management</li>
+                        <li>Entrepreneurship and business development</li>
+                        <li><strong>Career outcomes:</strong> AI Business Consultant, Startup Founder, Strategic Technology Advisor</li>
+                    </ul>
+
+                    <h2>3. Strategic Approach: Transforming Non-Technical Professionals into High-Paying IT Specialists</h2>
+                    <p>
+                        <strong>Our Unique Value Proposition:</strong> We solve the critical skills shortage by making high-paying IT careers accessible to non-technical professionals. Our progressive bootcamp structure breaks down barriers to entry while delivering immediate ROI for both learners and employers.
+                    </p>
+                    
+                    <h3>3.1 The Non-Technical Advantage:</h3>
+                    <ul>
+                        <li><strong>Fresh Perspective:</strong> Non-technical professionals bring business acumen and user experience insights that technical teams often lack</li>
+                        <li><strong>Communication Bridge:</strong> They excel at translating complex AI concepts into business value</li>
+                        <li><strong>Problem-Solving Approach:</strong> Focus on practical solutions rather than technical perfection</li>
+                        <li><strong>Cost-Effective Talent:</strong> Employers get skilled AI professionals without expensive developer salaries</li>
+                    </ul>
+
+                    <h3>3.2 Immediate ROI for Employers:</h3>
+                    <ul>
+                        <li><strong>Level 2 Graduates:</strong> Can automate basic processes and create content 3x faster from day one</li>
+                        <li><strong>Level 3 Graduates:</strong> Build AI agents and automation workflows without requiring developer teams</li>
+                        <li><strong>Level 4 Graduates:</strong> Implement responsible AI practices and data storytelling capabilities</li>
+                        <li><strong>Level 5 Graduates:</strong> Lead digital transformation initiatives and strategic AI adoption</li>
+                    </ul>
+
+                    <h2>4. Innovative Learning Management System (LMS)</h2>
+                    <p>
+                        Our revolutionary Learning Management System (LMS) platform represents a breakthrough in online education technology, specifically designed for accessibility and inclusivity:
+                    </p>
+
+                    <h3>4.1 Current Platform Foundation:</h3>
+                    <p><em>Our existing LMS platform provides a solid foundation with the following implemented features:</em></p>
+                    <ul>
+                        <li><strong>Modular Course Structure:</strong> Flexible learning paths with progress tracking and milestone recognition</li>
+                        <li><strong>Multi-Device Compatibility:</strong> Responsive design optimized for desktop, tablet, and mobile learning</li>
+                        <li><strong>Interactive Learning Tools:</strong> Video content, practical exercises, and assessment systems</li>
+                        <li><strong>User Dashboard System:</strong> Personalized learning environments with progress visualization</li>
+                        <li><strong>Content Management:</strong> Comprehensive course creation and management tools for instructors</li>
+                    </ul>
+
+                    <h3>4.2 Skills Bootcamps Funding Development Roadmap:</h3>
+                    <p><em>With Skills Bootcamps funding, we will enhance our platform with the following accessibility and inclusivity features:</em></p>
+                    <ul>
+                        <li><strong>Accessibility-First Enhancements:</strong> WCAG 2.1 AA compliance implementation, screen reader optimization, and keyboard navigation improvements</li>
+                        <li><strong>Trauma-Informed Learning Design:</strong> Flexible pacing controls, multiple learning modalities, and supportive feedback systems</li>
+                        <li><strong>Enhanced Personalization:</strong> Basic adaptive learning features that adjust content difficulty and pacing based on learner progress</li>
+                        <li><strong>Collaborative Learning Tools:</strong> Discussion forums, peer review systems, and instructor-student communication platforms</li>
+                        <li><strong>Advanced Analytics:</strong> Detailed progress tracking, engagement metrics, and learning outcome analysis</li>
+                        <li><strong>Mobile Learning Optimization:</strong> Enhanced mobile experience with offline learning capabilities</li>
+                    </ul>
+
+                    <h3>4.3 Development Timeline and Phased Approach:</h3>
+                    <p><em>Our development approach ensures sustainable growth and realistic delivery:</em></p>
+                    <ul>
+                        <li><strong>Phase 1 (Q1 2026):</strong> Core accessibility features, basic personalization, and mobile optimization</li>
+                        <li><strong>Phase 2 (Q2 2026):</strong> Enhanced analytics, collaborative tools, and trauma-informed design elements</li>
+                        <li><strong>Phase 3 (Q3 2026):</strong> Advanced personalization features and comprehensive WCAG compliance</li>
+                        <li><strong>Phase 4 (Q4 2026):</strong> Platform optimization, performance enhancements, and user feedback integration</li>
+                    </ul>
+
+                    <h2>5. Target Audience and Geographic Coverage</h2>
+                    <p>
+                        Our Skills Bootcamps are specifically designed for Somerset residents, covering all BA and TA postcode areas:
+                    </p>
+
+                    <h3>4.1 Primary Target Groups:</h3>
+                    <div class="grid md:grid-cols-2 gap-6 my-6">
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h4 class="font-bold mb-3" style="color: var(--oxford-blue);">Career Changers</h4>
+                            <p class="text-sm text-gray-600">Professionals from traditional sectors seeking to transition into AI and digital roles</p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h4 class="font-bold mb-3" style="color: var(--oxford-blue);">Women Returning to Work</h4>
+                            <p class="text-sm text-gray-600">Women re-entering the workforce after career breaks, seeking confidence-building and skill updates</p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h4 class="font-bold mb-3" style="color: var(--oxford-blue);">Neurodiverse Learners</h4>
+                            <p class="text-sm text-gray-600">Individuals with learning differences who benefit from structured, accessible learning environments</p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h4 class="font-bold mb-3" style="color: var(--oxford-blue);">Skills Upskilling</h4>
+                            <p class="text-sm text-gray-600">Adults seeking to stay relevant in the rapidly evolving AI economy</p>
+                        </div>
+                    </div>
+
+                    <h3>4.2 Geographic Coverage:</h3>
+                    <p>
+                        <strong>Somerset Coverage Areas:</strong> Bath, Bridgwater, Burnham-on-Sea, Chard, Frome, Glastonbury, Minehead, Taunton, Wells, Weston-super-Mare, Yeovil (BA & TA postcodes)
+                    </p>
+
+                    <h2>5. Delivery Model and Accessibility</h2>
+                    <p>
+                        Our planned 100% online delivery model is designed to ensure maximum accessibility while maintaining high-quality educational standards:
+                    </p>
+
+                    <h3>5.1 Delivery Methods:</h3>
+                    <ul>
+                        <li><strong>Recorded Content:</strong> On-demand access to all learning materials</li>
+                        <li><strong>Flexible Pacing:</strong> Self-paced modules with structured milestones</li>
+                        <li><strong>Peer Learning:</strong> Collaborative projects and study groups (to be developed)</li>
+                        <li><strong>One-to-One Support:</strong> Personalized mentoring and career guidance</li>
+                    </ul>
+
+                    <h3>5.2 Accessibility Features:</h3>
+                    <p><strong>Currently Implemented:</strong></p>
+                    <ul>
+                        <li>Basic keyboard navigation support for core platform functions</li>
+                        <li>Responsive design optimized for mobile and tablet accessibility</li>
+                        <li>Clear content structure with semantic HTML and proper heading hierarchy</li>
+                        <li>Flexible time allowances for assessments and assignments</li>
+                    </ul>
+                    
+                    <p><strong>To Be Developed with Skills Bootcamps Funding:</strong></p>
+                    <ul>
+                        <li>Screen reader compatibility and comprehensive alternative text for all visual content</li>
+                        <li>Closed captions and transcripts for all video content</li>
+                        <li>Enhanced keyboard navigation support for all interactive elements</li>
+                        <li>Customizable text size, contrast, and color schemes</li>
+                        <li>Multiple assessment formats to accommodate different learning styles</li>
+                        <li>WCAG 2.1 AA compliance implementation and testing</li>
+                    </ul>
+
+                    <h2>6. Career Support and Job Outcomes</h2>
+                    <p>
+                        Our comprehensive career support system ensures learners are well-prepared for successful transitions into AI and digital roles:
+                    </p>
+
+                    <h3>6.1 Career Readiness Components:</h3>
+                    <p><strong>AI-Assisted Career Support (Currently Available):</strong></p>
+                    <ul>
+                        <li><strong>Portfolio Development:</strong> AI-guided project portfolio templates and automated skill documentation</li>
+                        <li><strong>Resume and LinkedIn Optimization:</strong> AI-powered resume analysis, keyword optimization, and LinkedIn profile enhancement suggestions</li>
+                        <li><strong>Interview Preparation:</strong> AI-generated mock interview questions, technical assessment practice, and feedback on responses</li>
+                        <li><strong>Job Search Support:</strong> AI-assisted job matching, application tracking, and interview scheduling coordination</li>
+                    </ul>
+                    
+                    <p><strong>To Be Developed with Skills Bootcamps Funding:</strong></p>
+                    <ul>
+                        <li><strong>Advanced Portfolio Tools:</strong> AI-assisted project showcase creation and professional presentation templates</li>
+                        <li><strong>Industry Networking Platform:</strong> AI-powered networking suggestions and automated connection facilitation</li>
+                        <li><strong>Career Path Analytics:</strong> AI-driven career progression analysis and personalized development recommendations</li>
+                        <li><strong>Interview Simulation:</strong> AI-powered mock interview practice with real-time feedback and improvement suggestions</li>
+                    </ul>
+
+                    <h2>7. Quality Assurance and Evaluation</h2>
+                    <p>
+                        We maintain rigorous quality standards through comprehensive evaluation and continuous improvement processes:
+                    </p>
+
+                    <h3>7.1 Assessment Methods:</h3>
+                    <ul>
+                        <li>Formative assessments throughout the program</li>
+                        <li>Summative projects demonstrating practical skills</li>
+                        <li>Peer evaluations and collaborative assessments</li>
+                        <li>Industry-standard certification preparation</li>
+                        <li>Career readiness evaluations</li>
+                    </ul>
+
+                    <h2>8. Implementation Timeline</h2>
+                    <p>
+                        We propose a phased implementation approach starting Q1 2026, ensuring thorough preparation and quality delivery:
+                    </p>
+
+                    <h3>8.1 Phase 1: Q4 2025 - Foundation and Development</h3>
+                    <ul>
+                        <li>Finalize Learning Management System (LMS) platform development and testing</li>
+                        <li>Recruit and train qualified instructors</li>
+                        <li>Develop comprehensive curriculum and assessment materials</li>
+                        <li>Establish accessibility compliance and quality assurance processes</li>
+                        <li>Create marketing and recruitment materials</li>
+                    </ul>
+
+                    <h3>8.2 Phase 2: Q1 2026 - Pilot Launch</h3>
+                    <ul>
+                        <li>Launch pilot cohort with limited participants</li>
+                        <li>Test and refine delivery methods and platform functionality</li>
+                        <li>Gather learner feedback and implement improvements</li>
+                        <li>Establish career support and guidance processes</li>
+                    </ul>
+
+                    <h3>8.3 Phase 3: Q2-Q3 2026 - Full Program Delivery</h3>
+                    <ul>
+                        <li>Scale to full capacity with multiple cohorts</li>
+                        <li>Deliver both AI for Career Changers and Digital Skills for Returners programs</li>
+                        <li>Provide comprehensive career readiness support and job search guidance</li>
+                        <li>Monitor and evaluate outcomes against success metrics</li>
+                    </ul>
+
+                    <h3>8.4 Phase 4: Q4 2026 - Planning for 2027 Cohort Expansion</h3>
+                    <ul>
+                        <li>Analyze program outcomes and learner feedback</li>
+                        <li>Plan for expanded capacity and additional program offerings</li>
+                        <li>Develop strategies for reaching more underserved communities</li>
+                        <li>Prepare for sustainable long-term program delivery</li>
+                    </ul>
+
+                    <h2>9. Budget and Funding Requirements</h2>
+                    <p>
+                        We are seeking funding to support the development and delivery of Skills Bootcamps for Somerset residents, with a focus on maximizing value and accessibility:
+                    </p>
+
+                    <h3>9.1 Funding Allocation:</h3>
+                    <ul>
+                        <li>Staff salaries and professional development</li>
+                        <li>Learning Management System (LMS) platform maintenance and enhancement</li>
+                        <li>Course materials and industry certification preparation</li>
+                        <li>Career readiness support and job search guidance</li>
+                        <li>Accessibility, assistive and AI related tools and  technology</li>
+			<li>Administrative support and quality assurance</li>
+			<li>Industry relevant Networking and Employer Engagement activities and expenses</li>
+                    </ul>
+
+                    <h2>10. Success Metrics and Outcomes</h2>
+                    <p>
+                        We are committed to delivering measurable outcomes that demonstrate the effectiveness of our Skills Bootcamps:
+                    </p>
+
+                    <h3>9.1 Key Performance Indicators:</h3>
+                    <ul>
+                        <li><strong>Completion Rates:</strong> Target 85%+ completion rate across all programs</li>
+                        <li><strong>Job Interview Preparation:</strong> 80%+ of completers applying to job posts with a optimised LinkedIn profile and CV.</li>
+                        <li><strong>Employment Outcomes:</strong> 70%+ of completers in employment within 6 months</li>
+                        <li><strong>Learner Satisfaction:</strong> 90%+ satisfaction rating from program participants</li>
+                        <li><strong>Accessibility Compliance:</strong> 100% WCAG 2.1 AA compliance across all materials</li>
+                    </ul>
+
+                    <h2>10. Conclusion</h2>
+                    <p>
+                        SWCyber Nexus CIC is uniquely positioned to deliver transformative Skills Bootcamps that address the critical need for AI and digital skills in Somerset. Our innovative Learning Management System (LMS) platform, combined with our expertise in supporting underrepresented groups in technology, ensures that all learners can access high-quality education and achieve meaningful career outcomes.
+                    </p>
+                    <p>
+                        We are committed to working closely with Somerset County Council to deliver programs that not only meet Skills Bootcamps requirements but exceed expectations in terms of accessibility, inclusivity, and learner success.
+                    </p>
+
+                    <div class="bg-gray-50 p-8 rounded-lg my-8 text-center">
+                        <h3 class="text-xl font-bold mb-4" style="color: var(--oxford-blue);">Ready to Partner With Us?</h3>
+                        <p class="mb-6">
+                            Contact SWCyber Nexus CIC to discuss how we can deliver transformative Skills Bootcamps for Somerset residents.
+                        </p>
+                        <a href="index.html#contact" class="inline-block font-bold py-3 px-8 rounded-lg transition-colors duration-300 hover:opacity-90" style="background-color: var(--metallic-gold); color: var(--oxford-blue); text-decoration: none;">
+                            Contact Us Today
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="hero-gradient py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <svg class="neural-tree mr-3" viewBox="0 0 45 45">
+                            <path class="tree-path" d="M22.5 40 Q18 35, 20 30 T22.5 22.5 Q25 18, 22.5 13"/>
+                            <circle cx="22.5" cy="13" r="3" fill="#B8860B" class="tree-node"/>
+                            <circle cx="16" cy="18" r="2.5" fill="#D4AF37" class="tree-node"/>
+                            <circle cx="29" cy="18" r="2.5" fill="#D4AF37" class="tree-node"/>
+                            <circle cx="13" cy="25" r="2" fill="#002147" class="tree-node"/>
+                            <circle cx="32" cy="25" r="2" fill="#002147" class="tree-node"/>
+                            <circle cx="18" cy="32" r="2" fill="#1E3A8A" class="tree-node"/>
+                            <circle cx="27" cy="32" r="2" fill="#1E3A8A" class="tree-node"/>
+                            <path class="tree-path" d="M22.5 13 L16 18 M22.5 13 L29 18"/>
+                            <path class="tree-path" d="M16 18 L13 25 M29 18 L32 25"/>
+                            <path class="tree-path" d="M20 30 L18 32 M22.5 22.5 L27 32"/>
+                        </svg>
+                        <h3 class="text-xl font-bold text-white">SkillMindLab</h3>
+                    </div>
+                    <p class="text-blue-100 mb-4">
+                        Transforming careers through comprehensive AI education and inclusive learning environments.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-blue-100 hover:text-white">About Us</a></li>
+                        <li><a href="blog.html" class="text-blue-100 hover:text-white">Blog</a></li>
+                        <li><a href="proposal.html" class="text-blue-100 hover:text-white">Funding Proposal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact Info</h4>
+                    <div class="space-y-2 text-blue-100">
+                        <p><i class="fas fa-envelope mr-2"></i>hello@skillmindlab.com</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Weston-super-Mare, Somerset</p>
+                        <p><i class="fas fa-globe mr-2"></i>SWCyber Nexus CIC</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-blue-400 mt-8 pt-8 text-center">
+                <p class="text-blue-100">
+                    © 2025 SWCyber Nexus CIC. All rights reserved. | Skills Bootcamps Provider
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

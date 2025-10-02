@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>South West Employment Gap Analysis - SkillMindLab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --oxford-blue: #002147;
+            --oxford-blue-lighter: #667990;
+            --oxford-blue-darker: #00132A;
+            --metallic-gold: #D4AF37;
+            --dark-gold: #859410;
+            --champagne-gold: #FAEEC8;
+            --blond-gold: #FAF0BE;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1E293B;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--oxford-blue-darker) 0%, var(--oxford-blue) 100%);
+        }
+        
+        .stat-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .neural-tree {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .tree-path {
+            stroke: var(--metallic-gold);
+            stroke-width: 2;
+            fill: none;
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+            animation: drawPath 3s ease-in-out infinite;
+        }
+        
+        .tree-node {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes drawPath {
+            0%, 100% { stroke-dashoffset: 100; }
+            50% { stroke-dashoffset: 0; }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <svg class="neural-tree mr-3" viewBox="0 0 45 45">
+                            <path class="tree-path" d="M22.5 40 Q18 35, 20 30 T22.5 22.5 Q25 18, 22.5 13"/>
+                            <circle cx="22.5" cy="13" r="3" fill="#B8860B" class="tree-node"/>
+                            <circle cx="16" cy="18" r="2.5" fill="#D4AF37" class="tree-node"/>
+                            <circle cx="29" cy="18" r="2.5" fill="#D4AF37" class="tree-node"/>
+                            <circle cx="13" cy="25" r="2" fill="#002147" class="tree-node"/>
+                            <circle cx="32" cy="25" r="2" fill="#002147" class="tree-node"/>
+                            <circle cx="18" cy="32" r="2" fill="#1E3A8A" class="tree-node"/>
+                            <circle cx="27" cy="32" r="2" fill="#1E3A8A" class="tree-node"/>
+                            <path class="tree-path" d="M22.5 13 L16 18 M22.5 13 L29 18"/>
+                            <path class="tree-path" d="M16 18 L13 25 M29 18 L32 25"/>
+                            <path class="tree-path" d="M20 30 L18 32 M22.5 22.5 L27 32"/>
+                        </svg>
+                        <h1 class="text-2xl font-bold tracking-tight flex items-center">
+                            <span style="color: var(--metallic-gold);">Skill</span><span style="color: var(--oxford-blue);">Mind</span><span style="color: var(--oxford-blue-lighter);">Lab</span><sup class="text-xs ml-1" style="color: var(--oxford-blue);">®</sup>
+                        </h1>
+                    </div>
+                    <div class="hidden md:block ml-10">
+                        <div class="flex items-baseline space-x-4">
+                            <a href="index.html" class="text-gray-500 px-3 py-2 rounded-md text-sm font-medium" style="color: var(--oxford-blue-darker);">Home</a>
+                            <a href="proposal.html" class="text-gray-500 px-3 py-2 rounded-md text-sm font-medium" style="color: var(--oxford-blue-darker);">Funding Proposal</a>
+                            <a href="blog.html" class="text-gray-500 px-3 py-2 rounded-md text-sm font-medium" style="color: var(--oxford-blue-darker);">Blog</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                South West Employment Gap Analysis
+            </h1>
+            <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+                Comprehensive research demonstrating how our AI Skills Bootcamps address critical employment gaps in the South West region
+            </p>
+        </div>
+    </section>
+
+    <!-- Key Statistics -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Critical Employment Gaps in South West England</h2>
+                <p class="text-lg text-gray-600">Data-driven evidence supporting our Skills Bootcamps proposal</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <!-- Unemployment Rate -->
+                <div class="bg-gray-50 p-6 rounded-lg stat-card text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: var(--champagne-gold);">
+                        <i class="fas fa-chart-line text-2xl" style="color: var(--oxford-blue);"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-2" style="color: var(--oxford-blue);">3.5%</h3>
+                    <p class="text-sm text-gray-600">South West Unemployment Rate</p>
+                    <p class="text-xs text-gray-500 mt-2">Lower than UK average (4.5%)</p>
+                </div>
+
+                <!-- Youth Unemployment -->
+                <div class="bg-gray-50 p-6 rounded-lg stat-card text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: var(--champagne-gold);">
+                        <i class="fas fa-users text-2xl" style="color: var(--oxford-blue);"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-2" style="color: var(--oxford-blue);">14.2%</h3>
+                    <p class="text-sm text-gray-600">Youth Unemployment (16-24)</p>
+                    <p class="text-xs text-gray-500 mt-2">4x higher than 25-49 age group</p>
+                </div>
+
+                <!-- Skills Shortage -->
+                <div class="bg-gray-50 p-6 rounded-lg stat-card text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: var(--champagne-gold);">
+                        <i class="fas fa-exclamation-triangle text-2xl" style="color: var(--oxford-blue);"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-2" style="color: var(--oxford-blue);">44%</h3>
+                    <p class="text-sm text-gray-600">Businesses Report Worker Shortages</p>
+                    <p class="text-xs text-gray-500 mt-2">8% above national average</p>
+                </div>
+
+                <!-- Digital Skills Gap -->
+                <div class="bg-gray-50 p-6 rounded-lg stat-card text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: var(--champagne-gold);">
+                        <i class="fas fa-laptop-code text-2xl" style="color: var(--oxford-blue);"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-2" style="color: var(--oxford-blue);">17%</h3>
+                    <p class="text-sm text-gray-600">Digital Skills Shortage</p>
+                    <p class="text-xs text-gray-500 mt-2">Only 3% pursue IT qualifications</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Employment Gap Analysis -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Target Demographics -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6" style="color: var(--oxford-blue);">Primary Target Demographics</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="border-l-4 pl-4" style="border-color: var(--metallic-gold);">
+                            <h4 class="font-bold text-lg mb-2">Youth Long-Term Unemployed</h4>
+                            <p class="text-gray-600 text-sm mb-2">201,000 young people unemployed for 6+ months nationally</p>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Limited work experience</li>
+                                <li>• Skills mismatched to employer needs</li>
+                                <li>• Need for confidence building</li>
+                            </ul>
+                        </div>
+
+                        <div class="border-l-4 pl-4" style="border-color: var(--metallic-gold);">
+                            <h4 class="font-bold text-lg mb-2">Neurodiverse & Disabled Workers</h4>
+                            <p class="text-gray-600 text-sm mb-2">Significantly higher unemployment rates in this demographic</p>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Require accessible learning environments</li>
+                                <li>• Need structured support and scaffolding</li>
+                                <li>• Often overlooked by traditional training</li>
+                            </ul>
+                        </div>
+
+                        <div class="border-l-4 pl-4" style="border-color: var(--metallic-gold);">
+                            <h4 class="font-bold text-lg mb-2">Career Changers & Returners</h4>
+                            <p class="text-gray-600 text-sm mb-2">Adults seeking to transition into digital roles</p>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Existing skills need updating</li>
+                                <li>• Require flexible learning options</li>
+                                <li>• Need practical, job-ready skills</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Gap Analysis -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6" style="color: var(--oxford-blue);">Critical Skills Gaps</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="border-l-4 pl-4" style="border-color: var(--oxford-blue-lighter);">
+                            <h4 class="font-bold text-lg mb-2">Digital & AI Skills</h4>
+                            <p class="text-gray-600 text-sm mb-2">17% shortage, only 3% pursuing IT qualifications</p>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• AI tool proficiency</li>
+                                <li>• Data analysis and interpretation</li>
+                                <li>• Digital transformation skills</li>
+                            </ul>
+                        </div>
+
+                        <div class="border-l-4 pl-4" style="border-color: var(--oxford-blue-lighter);">
+                            <h4 class="font-bold text-lg mb-2">Soft Skills & Communication</h4>
+                            <p class="text-gray-600 text-sm mb-2">Essential for job retention and career progression</p>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Professional communication</li>
+                                <li>• Problem-solving and critical thinking</li>
+                                <li>• Collaboration and teamwork</li>
+                            </ul>
+                        </div>
+
+                        <div class="border-l-4 pl-4" style="border-color: var(--oxford-blue-lighter);">
+                            <h4 class="font-bold text-lg mb-2">Industry-Specific Knowledge</h4>
+                            <p class="text-gray-600 text-sm mb-2">Manufacturing, construction, and emerging sectors</p>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• AI ethics and responsible implementation</li>
+                                <li>• Business intelligence and reporting</li>
+                                <li>• Project management with AI tools</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootcamp Solution Mapping -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How Our Bootcamps Address These Gaps</h2>
+                <p class="text-lg text-gray-600">Direct correlation between employment needs and our training solutions</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- AI for Everyone -->
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--oxford-blue);">AI for Everyone (16 weeks)</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-bold mb-2">Addresses:</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• 17% digital skills shortage</li>
+                                <li>• Youth unemployment (14.2%)</li>
+                                <li>• Career changer needs</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2">Skills Delivered:</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Practical AI tool usage</li>
+                                <li>• Prompt engineering</li>
+                                <li>• Workplace AI integration</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2">Accessibility Features:</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Visual learning aids</li>
+                                <li>• Executive function support</li>
+                                <li>• Flexible pacing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Ethics -->
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--oxford-blue);">AI Ethics & Innovation (14 weeks)</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-bold mb-2">Addresses:</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Emerging regulatory requirements</li>
+                                <li>• Mid-career professional upskilling</li>
+                                <li>• Business compliance needs</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2">Skills Delivered:</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Bias detection and mitigation</li>
+                                <li>• Regulatory compliance (GDPR, EU AI Act)</li>
+                                <li>• Ethical AI governance</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2">Accessibility Features:</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Structured decision frameworks</li>
+                                <li>• Social communication practice</li>
+                                <li>• Case study analysis support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Storytelling -->
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--oxford-blue);">AI-Powered Data Storytelling (18 weeks)</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-bold mb-2">Addresses:</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Business intelligence skills shortage</li>
+                                <li>• Professional communication gaps</li>
+                                <li>• Executive reporting needs</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2">Skills Delivered:</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• AI-assisted data analysis</li>
+                                <li>• Automated reporting</li>
+                                <li>• Executive communication</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2">Accessibility Features:</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Visual data interpretation tools</li>
+                                <li>• Audio-described charts</li>
+                                <li>• Presentation coaching</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Future-Proof Career -->
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--oxford-blue);">Future-Proof Your Career (20 weeks)</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-bold mb-2">Addresses:</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Long-term career sustainability</li>
+                                <li>• Digital transformation needs</li>
+                                <li>• Portfolio building requirements</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2">Skills Delivered:</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• AI-enhanced communication</li>
+                                <li>• Digital transformation PM</li>
+                                <li>• Career portfolio development</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2">Accessibility Features:</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Structured portfolio templates</li>
+                                <li>• Virtual networking practice</li>
+                                <li>• Personalized learning paths</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Economic Impact -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center" style="color: var(--oxford-blue);">Economic Impact & ROI</h2>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: var(--champagne-gold);">
+                            <i class="fas fa-pound-sign text-3xl" style="color: var(--oxford-blue);"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2" style="color: var(--oxford-blue);">£29,628</h3>
+                        <p class="text-gray-600">South West GDP per capita</p>
+                        <p class="text-sm text-gray-500 mt-2">Strong economic foundation for training investment</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: var(--champagne-gold);">
+                            <i class="fas fa-chart-bar text-3xl" style="color: var(--oxford-blue);"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2" style="color: var(--oxford-blue);">6,852</h3>
+                        <p class="text-gray-600">Professional Vacancies Q1 2025</p>
+                        <p class="text-sm text-gray-500 mt-2">18.8% quarterly increase in demand</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: var(--champagne-gold);">
+                            <i class="fas fa-target text-3xl" style="color: var(--oxford-blue);"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2" style="color: var(--oxford-blue);">900,000</h3>
+                        <p class="text-gray-600">Additional Workers Needed by 2030</p>
+                        <p class="text-sm text-gray-500 mt-2">Priority sectors require Level 4+ qualifications</p>
+                    </div>
+                </div>
+                
+                <div class="mt-8 p-6 rounded-lg" style="background-color: var(--champagne-gold);">
+                    <h3 class="text-xl font-bold mb-4 text-center" style="color: var(--oxford-blue);">Why Our Bootcamps Are the Optimal Solution</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-bold mb-3" style="color: var(--oxford-blue);">Directly Addresses Identified Gaps:</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check mr-2 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>Targets 14.2% youth unemployment with practical skills</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check mr-2 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>Bridges 17% digital skills shortage with AI training</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check mr-2 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>Supports neurodiverse learners with accessible design</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-3" style="color: var(--oxford-blue);">Economic Benefits:</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check mr-2 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>Reduces long-term unemployment costs</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check mr-2 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>Increases regional productivity and GDP</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check mr-2 mt-1" style="color: var(--oxford-blue-lighter);"></i>
+                                    <span>Creates sustainable career pathways</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="hero-gradient py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-blue-100">
+                © 2025 SWCyber Nexus CIC. All rights reserved. | Skills Bootcamps Provider
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
+

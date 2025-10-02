@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Guidance Blog - SkillMindLab | SWCyber Nexus CIC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --oxford-blue: #002147;
+            --oxford-blue-lighter: #667990;
+            --oxford-blue-darker: #00132A;
+            --metallic-gold: #D4AF37;
+            --dark-gold: #859410;
+            --champagne-gold: #FAEEC8;
+            --blond-gold: #FAF0BE;
+            --success-green: #10B981;
+            --warning-orange: #F59E0B;
+            --error-red: #EF4444;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1E293B;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--oxford-blue-darker) 0%, var(--oxford-blue) 100%);
+        }
+
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Neural Tree Logo Styles */
+        .neural-tree {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .tree-path {
+            stroke: var(--metallic-gold);
+            stroke-width: 2;
+            fill: none;
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+            animation: drawPath 3s ease-in-out infinite;
+        }
+        
+        .tree-node {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes drawPath {
+            0%, 100% { stroke-dashoffset: 100; }
+            50% { stroke-dashoffset: 0; }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <svg class="neural-tree mr-3" viewBox="0 0 45 45">
+                            <path class="tree-path" d="M22.5 40 Q18 35, 20 30 T22.5 22.5 Q25 18, 22.5 13"/>
+                            <circle cx="22.5" cy="13" r="3" fill="#B8860B" class="tree-node"/>
+                            <circle cx="16" cy="18" r="2.5" fill="#D4AF37" class="tree-node"/>
+                            <circle cx="29" cy="18" r="2.5" fill="#D4AF37" class="tree-node"/>
+                            <circle cx="13" cy="25" r="2" fill="#002147" class="tree-node"/>
+                            <circle cx="32" cy="25" r="2" fill="#002147" class="tree-node"/>
+                            <circle cx="18" cy="32" r="2" fill="#1E3A8A" class="tree-node"/>
+                            <circle cx="27" cy="32" r="2" fill="#1E3A8A" class="tree-node"/>
+                            <path class="tree-path" d="M22.5 13 L16 18 M22.5 13 L29 18"/>
+                            <path class="tree-path" d="M16 18 L13 25 M29 18 L32 25"/>
+                            <path class="tree-path" d="M20 30 L18 32 M22.5 22.5 L27 32"/>
+                        </svg>
+                        <a href="index.html" class="text-2xl font-bold tracking-tight flex items-center">
+                            <span style="color: var(--metallic-gold);">Skill</span><span style="color: var(--oxford-blue);">Mind</span><span style="color: var(--oxford-blue-lighter);">Lab</span><sup class="text-xs ml-1" style="color: var(--oxford-blue);">®</sup>
+                        </a>
+                    </div>
+                    <div class="hidden md:block ml-10">
+                        <div class="flex items-baseline space-x-4">
+                            <a href="index.html" class="text-gray-500 px-3 py-2 rounded-md text-sm font-medium" style="color: var(--oxford-blue-darker);">Home</a>
+                            <a href="about.html" class="text-gray-500 px-3 py-2 rounded-md text-sm font-medium" style="color: var(--oxford-blue-darker);">About Us</a>
+                            <a href="blog.html" class="px-3 py-2 rounded-md text-sm font-medium" style="color: var(--oxford-blue);">Blog</a>
+                            <a href="proposal.html" class="text-gray-500 px-3 py-2 rounded-md text-sm font-medium" style="color: var(--oxford-blue-darker);">Funding Proposal</a>
+                            <a href="index.html#contact" class="text-gray-500 px-3 py-2 rounded-md text-sm font-medium" style="color: var(--oxford-blue-darker);">Contact</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-4 flex items-center md:ml-6">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium" style="background-color: var(--champagne-gold); color: var(--oxford-blue);">
+                            <i class="fas fa-circle mr-1" style="color: var(--metallic-gold);"></i>
+                            Skills Bootcamps Provider
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                Career Guidance Resources
+            </h1>
+            <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+                Expert insights to accelerate your AI career journey and navigate the digital transformation landscape.
+            </p>
+        </div>
+    </section>
+
+    <!-- Blog Posts Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- AI Job Market Trends -->
+                <article class="bg-gray-50 p-6 rounded-lg card-hover">
+                    <div class="text-2xl mb-4" style="color: var(--oxford-blue);">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">AI Job Market Trends 2025</h3>
+                    <p class="text-gray-600 mb-4">
+                        Discover the latest trends in AI employment and identify the most in-demand skills for 2025.
+                    </p>
+                    <a href="blog/ai-job-market-trends.html" class="font-semibold hover:underline" style="color: var(--oxford-blue);">
+                        Read More <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </article>
+
+                <!-- Resume Writing for AI Roles -->
+                <article class="bg-gray-50 p-6 rounded-lg card-hover">
+                    <div class="text-2xl mb-4" style="color: var(--oxford-blue);">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Resume Writing for AI Roles</h3>
+                    <p class="text-gray-600 mb-4">
+                        Master the art of crafting resumes that stand out in the competitive AI job market.
+                    </p>
+                    <a href="blog/resume-writing-ai-roles.html" class="font-semibold hover:underline" style="color: var(--oxford-blue);">
+                        Read More <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </article>
+
+                <!-- Career Transition Guide -->
+                <article class="bg-gray-50 p-6 rounded-lg card-hover">
+                    <div class="text-2xl mb-4" style="color: var(--oxford-blue);">
+                        <i class="fas fa-map-signs"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Career Transition Guide</h3>
+                    <p class="text-gray-600 mb-4">
+                        Navigate your career change with confidence using our step-by-step transition roadmap.
+                    </p>
+                    <a href="blog/career-transition-guide.html" class="font-semibold hover:underline" style="color: var(--oxford-blue);">
+                        Read More <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </article>
+            </div>
+
+            <!-- Coming Soon Posts -->
+            <div class="mt-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Coming Soon</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <div class="text-2xl mb-4" style="color: var(--oxford-blue-lighter);">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Networking in the AI Industry</h3>
+                        <p class="text-gray-600 mb-4">
+                            Build meaningful professional connections in the AI and tech community.
+                        </p>
+                        <span class="text-sm" style="color: var(--oxford-blue-lighter);">Coming Soon</span>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <div class="text-2xl mb-4" style="color: var(--oxford-blue-lighter);">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Skills Bootcamps Success Stories</h3>
+                        <p class="text-gray-600 mb-4">
+                            Real stories from learners who transformed their careers through our programs.
+                        </p>
+                        <span class="text-sm" style="color: var(--oxford-blue-lighter);">Coming Soon</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+                <p class="text-lg text-gray-600">Ready to start your AI training journey? Contact us today.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope mr-2" style="color: var(--oxford-blue);"></i>
+                            <span class="text-gray-700">hello@skillmindlab.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2" style="color: var(--oxford-blue);"></i>
+                            <span class="text-gray-700">Weston-super-Mare, Somerset</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <form action="mailto:hello@skillmindlab.com?subject=Skills Bootcamps Inquiry&body=Hello, I am interested in the Skills Bootcamps program. Please send me more information." method="post" enctype="text/plain" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                        </div>
+                        <button type="submit" class="w-full font-bold py-3 px-6 rounded-lg transition-colors duration-300" style="background-color: var(--metallic-gold); color: var(--oxford-blue);">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="hero-gradient py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <svg class="neural-tree mr-3" viewBox="0 0 45 45">
+                            <path class="tree-path" d="M22.5 40 Q18 35, 20 30 T22.5 22.5 Q25 18, 22.5 13"/>
+                            <circle cx="22.5" cy="13" r="3" fill="#B8860B" class="tree-node"/>
+                            <circle cx="16" cy="18" r="2.5" fill="#D4AF37" class="tree-node"/>
+                            <circle cx="29" cy="18" r="2.5" fill="#D4AF37" class="tree-node"/>
+                            <circle cx="13" cy="25" r="2" fill="#002147" class="tree-node"/>
+                            <circle cx="32" cy="25" r="2" fill="#002147" class="tree-node"/>
+                            <circle cx="18" cy="32" r="2" fill="#1E3A8A" class="tree-node"/>
+                            <circle cx="27" cy="32" r="2" fill="#1E3A8A" class="tree-node"/>
+                            <path class="tree-path" d="M22.5 13 L16 18 M22.5 13 L29 18"/>
+                            <path class="tree-path" d="M16 18 L13 25 M29 18 L32 25"/>
+                            <path class="tree-path" d="M20 30 L18 32 M22.5 22.5 L27 32"/>
+                        </svg>
+                        <h3 class="text-xl font-bold text-white">SkillMindLab</h3>
+                    </div>
+                    <p class="text-blue-100 mb-4">
+                        Transforming careers through comprehensive AI education and inclusive learning environments.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-blue-100 hover:text-white">About Us</a></li>
+                        <li><a href="blog.html" class="text-blue-100 hover:text-white">Blog</a></li>
+                        <li><a href="proposal.html" class="text-blue-100 hover:text-white">Funding Proposal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact Info</h4>
+                    <div class="space-y-2 text-blue-100">
+                        <p><i class="fas fa-envelope mr-2"></i>hello@skillmindlab.com</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Weston-super-Mare, Somerset</p>
+                        <p><i class="fas fa-globe mr-2"></i>SWCyber Nexus CIC</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-blue-400 mt-8 pt-8 text-center">
+                <p class="text-blue-100">
+                    © 2025 SWCyber Nexus CIC. All rights reserved. | Skills Bootcamps Provider
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
