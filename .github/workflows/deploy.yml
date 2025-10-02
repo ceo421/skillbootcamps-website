@@ -10,10 +10,15 @@ env:
   PROJECT_ID: skillbootcamps
   SERVICE: skillbootcamps-website
   REGION: europe-west2
+  WORKLOAD_IDENTITY_PROVIDER: projects/123456789/locations/global/workloadIdentityPools/github/providers/github
+  SERVICE_ACCOUNT: github-actions-deploy@skillbootcamps.iam.gserviceaccount.com
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
     - name: Checkout
       uses: actions/checkout@v4
@@ -22,7 +27,8 @@ jobs:
       id: auth
       uses: google-github-actions/auth@v2
       with:
-        credentials_json: '${{ secrets.GCP_SA_KEY }}'
+        workload_identity_provider: ${{ env.WORKLOAD_IDENTITY_PROVIDER }}
+        service_account: ${{ env.SERVICE_ACCOUNT }}
 
     - name: Set up Cloud SDK
       uses: google-github-actions/setup-gcloud@v2
