@@ -542,7 +542,7 @@
             </div>
 
             <div class="max-w-2xl mx-auto">
-                <form id="contactForm" class="space-y-6">
+                <form id="contactForm" action="https://formspree.io/f/xpwnjqpg" method="POST" class="space-y-6">
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
@@ -641,10 +641,8 @@
     </footer>
 
     <script>
-        // Contact form submission with Gmail mailto
+        // Contact form submission with Formspree
         document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
             const submitBtn = document.getElementById('submitBtn');
             const originalText = submitBtn.innerHTML;
             
@@ -652,41 +650,8 @@
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
             submitBtn.disabled = true;
             
-            // Get form data
-            const firstName = document.getElementById('firstName').value;
-            const lastName = document.getElementById('lastName').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            const fullName = firstName + ' ' + lastName;
-            
-            // Create email content
-            const emailBody = `New contact form submission from SkillBootcamps website:
-
-Name: ${fullName}
-Email: ${email}
-Subject: ${subject}
-
-Message:
-${message}
-
----
-This message was sent from the SkillBootcamps contact form.
-Timestamp: ${new Date().toLocaleString()}`;
-            
-            // Create mailto link
-            const mailtoLink = `mailto:ceo@skillmindlab.com?subject=${encodeURIComponent('New Contact Form Submission - ' + subject)}&body=${encodeURIComponent(emailBody)}&cc=${encodeURIComponent(email)}`;
-            
-            // Open email client
-            window.location.href = mailtoLink;
-            
-            // Show success message
-            setTimeout(() => {
-                alert('Thank you for your message! Your email client should have opened. Please send the email to complete your submission.');
-                document.getElementById('contactForm').reset();
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }, 1000);
+            // Let the form submit naturally to Formspree
+            // Formspree will handle the submission and redirect
         });
     </script>
 </body>
