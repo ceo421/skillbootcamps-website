@@ -916,7 +916,7 @@
                 </div>
 
                 <div>
-                    <form action="mailto:hello@skillmindlab.com" method="post" enctype="text/plain" class="space-y-4" onsubmit="return submitForm()">
+                    <form id="contactForm" class="space-y-4">
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
                             <input type="text" id="name" name="name" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
@@ -945,7 +945,7 @@
                             <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
                             <textarea id="message" name="message" rows="4" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
                         </div>
-                        <button type="submit" class="w-full font-bold py-3 px-6 rounded-lg transition-colors duration-300" style="background-color: var(--metallic-gold); color: var(--oxford-blue);">
+                        <button type="submit" onclick="return submitForm()" class="w-full font-bold py-3 px-6 rounded-lg transition-colors duration-300" style="background-color: var(--metallic-gold); color: var(--oxford-blue);">
                             Send Message
                         </button>
                     </form>
@@ -2023,6 +2023,46 @@
                 closeBootcampModal();
             }
         });
+
+        // Contact form submission function
+        function submitForm() {
+            const form = document.getElementById('contactForm');
+            
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Create email body
+            const emailBody = `New contact form submission from SkillBootcamps website:
+
+Name: ${name}
+Email: ${email}
+Subject: ${subject}
+
+Message:
+${message}
+
+---
+This message was sent from the SkillBootcamps contact form.
+Timestamp: ${new Date().toLocaleString()}`;
+
+            // Show instructions to user
+            alert(`Thank you for your message! Please email us at hello@skillmindlab.com and anacstjardim@gmail.com with the following information:
+
+Subject: New Contact Form Submission - ${subject}
+
+Message:
+${emailBody}
+
+We will respond within 24 hours.`);
+
+            // Reset form
+            form.reset();
+            
+            return false; // Prevent default form submission
+        }
     </script>
 </body>
 </html>
