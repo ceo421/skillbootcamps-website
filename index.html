@@ -6,6 +6,7 @@
     <title>SkillMindLab - AI Training Provider | SWCyber Nexus CIC</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <style>
         :root {
             --oxford-blue: #002147;
@@ -2024,7 +2025,7 @@
             }
         });
 
-        // Contact form submission function
+        // Contact form submission function using EmailJS
         function submitForm() {
             const form = document.getElementById('contactForm');
             
@@ -2034,8 +2035,37 @@
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
             
-            // Create email body
-            const emailBody = `New contact form submission from SkillBootcamps website:
+            // Validate required fields
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all required fields.');
+                return false;
+            }
+            
+            // Show loading state
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+            submitButton.disabled = true;
+            
+            // Prepare email data
+            const templateParams = {
+                from_name: name,
+                from_email: email,
+                subject: subject,
+                message: message,
+                to_email: 'hello@skillmindlab.com,anacstjardim@gmail.com'
+            };
+            
+            // Send email using EmailJS
+            if (typeof emailjs !== 'undefined') {
+                emailjs.send('service_skillmindlab', 'template_contact', templateParams)
+                    .then(function(response) {
+                        alert('Thank you for your message! We\'ll get back to you within 24 hours.');
+                        form.reset();
+                    }, function(error) {
+                        console.error('EmailJS Error:', error);
+                        // Fallback to manual email instructions
+                        const emailBody = `New contact form submission from SkillBootcamps website:
 
 Name: ${name}
 Email: ${email}
@@ -2048,8 +2078,36 @@ ${message}
 This message was sent from the SkillBootcamps contact form.
 Timestamp: ${new Date().toLocaleString()}`;
 
-            // Show instructions to user
-            alert(`Thank you for your message! Please email us at hello@skillmindlab.com and anacstjardim@gmail.com with the following information:
+                        alert(`Thank you for your message! Please email us at hello@skillmindlab.com and anacstjardim@gmail.com with the following information:
+
+Subject: New Contact Form Submission - ${subject}
+
+Message:
+${emailBody}
+
+We will respond within 24 hours.`);
+                    })
+                    .finally(function() {
+                        // Reset button state
+                        submitButton.innerHTML = originalText;
+                        submitButton.disabled = false;
+                    });
+            } else {
+                // Fallback to manual email instructions
+                const emailBody = `New contact form submission from SkillBootcamps website:
+
+Name: ${name}
+Email: ${email}
+Subject: ${subject}
+
+Message:
+${message}
+
+---
+This message was sent from the SkillBootcamps contact form.
+Timestamp: ${new Date().toLocaleString()}`;
+
+                alert(`Thank you for your message! Please email us at hello@skillmindlab.com and anacstjardim@gmail.com with the following information:
 
 Subject: New Contact Form Submission - ${subject}
 
@@ -2058,8 +2116,10 @@ ${emailBody}
 
 We will respond within 24 hours.`);
 
-            // Reset form
-            form.reset();
+                form.reset();
+                submitButton.innerHTML = originalText;
+                submitButton.disabled = false;
+            }
             
             return false; // Prevent default form submission
         }
