@@ -542,8 +542,26 @@
             </div>
 
             <div class="max-w-2xl mx-auto">
-                <form id="contactForm" action="https://formspree.io/f/xpwnjqpg" method="POST" class="space-y-6">
-                    <input type="hidden" name="_to" value="ceo@skillmindlab.com">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
+                    <h3 class="text-lg font-semibold text-blue-900 mb-4">Contact Information</h3>
+                    <p class="text-blue-800 mb-4">Ready to get in touch? Here's how to reach us:</p>
+                    <div class="space-y-2">
+                        <p class="flex items-center text-blue-700">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <strong>Email:</strong> <a href="mailto:ceo@skillmindlab.com" class="ml-2 text-blue-600 hover:text-blue-800 underline">ceo@skillmindlab.com</a>
+                        </p>
+                        <p class="flex items-center text-blue-700">
+                            <i class="fas fa-phone mr-3"></i>
+                            <strong>Phone:</strong> <span class="ml-2">Available upon request</span>
+                        </p>
+                        <p class="flex items-center text-blue-700">
+                            <i class="fas fa-clock mr-3"></i>
+                            <strong>Response Time:</strong> <span class="ml-2">Within 24 hours</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <form id="contactForm" class="space-y-6">
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
@@ -642,17 +660,44 @@
     </footer>
 
     <script>
-        // Contact form submission with Formspree
+        // Contact form - show email address for easy copying
         document.getElementById('contactForm').addEventListener('submit', function(e) {
-            const submitBtn = document.getElementById('submitBtn');
-            const originalText = submitBtn.innerHTML;
+            e.preventDefault();
             
-            // Show loading state
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
-            submitBtn.disabled = true;
+            // Get form data
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            const fullName = firstName + ' ' + lastName;
             
-            // Let the form submit naturally to Formspree
-            // Formspree will handle the submission and redirect
+            // Create email content
+            const emailBody = `New contact form submission from SkillBootcamps website:
+
+Name: ${fullName}
+Email: ${email}
+Subject: ${subject}
+
+Message:
+${message}
+
+---
+This message was sent from the SkillBootcamps contact form.
+Timestamp: ${new Date().toLocaleString()}`;
+            
+            // Show instructions to user
+            alert(`Thank you for your message! Please email us at ceo@skillmindlab.com with the following information:
+
+Subject: New Contact Form Submission - ${subject}
+
+Message:
+${emailBody}
+
+We will respond within 24 hours.`);
+            
+            // Reset form
+            document.getElementById('contactForm').reset();
         });
     </script>
 </body>
