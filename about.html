@@ -6,7 +6,6 @@
     <title>About Us - SkillMindLab | Revolutionary AI Education Platform</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <style>
         :root {
             --oxford-blue: #002147;
@@ -642,12 +641,7 @@
     </footer>
 
     <script>
-        // Initialize EmailJS
-        (function() {
-            emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
-        })();
-
-        // Contact form submission with EmailJS
+        // Contact form submission with Gmail mailto
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -659,30 +653,40 @@
             submitBtn.disabled = true;
             
             // Get form data
-            const formData = {
-                firstName: document.getElementById('firstName').value,
-                lastName: document.getElementById('lastName').value,
-                email: document.getElementById('email').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value,
-                fullName: document.getElementById('firstName').value + ' ' + document.getElementById('lastName').value
-            };
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            const fullName = firstName + ' ' + lastName;
             
-            // Send email using EmailJS
-            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
-                .then(function(response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                    alert('Thank you for your message! We\'ll get back to you within 2 working days.');
-                    document.getElementById('contactForm').reset();
-                }, function(error) {
-                    console.log('FAILED...', error);
-                    alert('Sorry, there was an error sending your message. Please try again or email us directly at hello@skillmindlab.com');
-                })
-                .finally(function() {
-                    // Reset button state
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                });
+            // Create email content
+            const emailBody = `New contact form submission from SkillBootcamps website:
+
+Name: ${fullName}
+Email: ${email}
+Subject: ${subject}
+
+Message:
+${message}
+
+---
+This message was sent from the SkillBootcamps contact form.
+Timestamp: ${new Date().toLocaleString()}`;
+            
+            // Create mailto link
+            const mailtoLink = `mailto:ceo@skillmindlab.com?subject=${encodeURIComponent('New Contact Form Submission - ' + subject)}&body=${encodeURIComponent(emailBody)}&cc=${encodeURIComponent(email)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            setTimeout(() => {
+                alert('Thank you for your message! Your email client should have opened. Please send the email to complete your submission.');
+                document.getElementById('contactForm').reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 1000);
         });
     </script>
 </body>
