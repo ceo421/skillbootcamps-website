@@ -2052,9 +2052,8 @@
             submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
             submitButton.disabled = true;
             
-            // Check if this is a job application (requires attachment)
-            const isJobApplication = subject.includes('Become part of the team');
-            const templateName = isJobApplication ? 'template_with_attachment' : 'template_nz46g9w';
+            // Use the simple contact template for all forms
+            const templateName = 'template_nz46g9w';
             
             // Prepare email data
             const templateParams = {
@@ -2074,28 +2073,7 @@
                         form.reset();
                     }, function(error) {
                         console.error('EmailJS Error:', error);
-                        // Fallback to manual email instructions
-                        const emailBody = `New contact form submission from SkillBootcamps website:
-
-Name: ${name}
-Email: ${email}
-Subject: ${subject}
-
-Message:
-${message}
-
----
-This message was sent from the SkillBootcamps contact form.
-Timestamp: ${new Date().toLocaleString()}`;
-
-                        alert(`Thank you for your message! Please email us at hello@skillmindlab.com and anacstjardim@gmail.com with the following information:
-
-Subject: New Contact Form Submission - ${subject}
-
-Message:
-${emailBody}
-
-We will respond within 24 hours.`);
+                        alert('Sorry, there was an error sending your message. Please try again or email us directly at hello@skillmindlab.com');
                     })
                     .finally(function() {
                         // Reset button state
@@ -2103,29 +2081,7 @@ We will respond within 24 hours.`);
                         submitButton.disabled = false;
                     });
             } else {
-                // Fallback to manual email instructions
-                const emailBody = `New contact form submission from SkillBootcamps website:
-
-Name: ${name}
-Email: ${email}
-Subject: ${subject}
-
-Message:
-${message}
-
----
-This message was sent from the SkillBootcamps contact form.
-Timestamp: ${new Date().toLocaleString()}`;
-
-                alert(`Thank you for your message! Please email us at hello@skillmindlab.com and anacstjardim@gmail.com with the following information:
-
-Subject: New Contact Form Submission - ${subject}
-
-Message:
-${emailBody}
-
-We will respond within 24 hours.`);
-
+                alert('Please email us directly at hello@skillmindlab.com');
                 form.reset();
                 submitButton.innerHTML = originalText;
                 submitButton.disabled = false;
