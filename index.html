@@ -2052,18 +2052,23 @@
             submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
             submitButton.disabled = true;
             
+            // Check if this is a job application (requires attachment)
+            const isJobApplication = subject.includes('Become part of the team');
+            const templateName = isJobApplication ? 'template_with_attachment' : 'template_nz46g9w';
+            
             // Prepare email data
             const templateParams = {
                 from_name: name,
                 from_email: email,
                 subject: subject,
                 message: message,
+                website: 'SkillBootcamps',
                 to_email: 'hello@skillmindlab.com,anacstjardim@gmail.com'
             };
             
             // Send email using EmailJS
             if (typeof emailjs !== 'undefined') {
-                emailjs.send('service_skillmindlab', 'template_skillbootcamps', templateParams)
+                emailjs.send('service_skillmindlab', templateName, templateParams)
                     .then(function(response) {
                         alert('Thank you for your message! We\'ll get back to you within 24 hours.');
                         form.reset();
